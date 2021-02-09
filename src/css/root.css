@@ -1,0 +1,208 @@
+:root{
+    --azul-claro:#29AAE1;
+    --azul-escuro:#303393;
+    --cinza-claro:#F5F5F5;
+    --cinza-escuro:#E9E9E9;
+}
+
+html{
+    overflow: auto;    
+}
+
+@font-face {
+    font-family: ProximaExtraBold;
+    src: url(../fonts/Proxima\ Nova\ Extrabold.otf);
+}
+@font-face {
+    font-family: ProximaBold;
+    src: url(../fonts/Proxima\ Nova\ Bold.otf);
+}
+@font-face {
+    font-family: ProximaBlack;
+    src: url(../fonts/Proxima\ Nova\ Black.otf);
+}
+@font-face {
+    font-family: ProximaThin;
+    src: url(../fonts/Proxima\ Nova\ Thin.otf);
+}
+@font-face {
+    font-family: Proxima;
+    src: url(../fonts/ProximaNova-Regular.otf);
+}
+
+.bold{
+    font-family:ProximaBold;
+}
+
+.thin{
+    font-family: ProximaThin;
+}
+
+.bg-azulClaro{
+    background: var(--azul-claro);
+}
+.azulClaro{
+    color: var(--azul-claro);
+}
+
+.bg-branco{
+    background: white;
+}
+.branco{
+    color: white;
+}
+
+.bg-azulEscuro{
+    background: var(--azul-escuro);
+}
+.azulEscuro{
+    color: var(--azul-escuro);
+}
+
+.bg-cinza-claro{
+    background: var(--cinza-claro) !important;
+}
+.cinza-claro{
+    color: var(--cinza-claro);
+}
+
+.bg-cinza-escuro{
+    background: var(--cinza-escuro);
+}
+.cinza-escuro{
+    color: var(--cinza-escuro);
+}
+.line-cinza-escuro{
+    border: 2px solid var(--cinza-escuro);
+    border-radius: 15px;
+}
+
+.line-azulEscuro{
+    border: 2px solid var(--azul-escuro);
+    border-radius: 15px;
+}
+
+.btn-primary {
+    background-color: #303393;
+    margin: 10px;
+    text-align: center;
+}
+.btn-outline-primary{
+    border-color: #303393;
+    color: #303393;
+}
+
+.d-example{
+    text-align: center;
+}
+
+.rounded{
+    border-radius: 15px !important;
+}
+
+.h-content{
+    height: fit-content;
+}
+
+#pesquisa .ant-select-selector{
+    border: 0 !important;
+}
+
+.img-fluid{
+  display: block;
+  margin-left:auto; 
+  margin-right: center;
+}
+
+.img-fluid-perfil{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.modal{
+    overflow-y: auto;
+}
+
+.content-site{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Categoria{
+    color:var(--azul-escuro);
+    text-align: justify;
+}
+
+
+.footer-copyright{
+    background-color: var(--cinza-escuro);
+    color: var(--azul-escuro);
+}
+
+.cards-Telainicial{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 50px;
+}
+.card-content{
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+.cards-Telainicial .card-item{
+    background-color:#fff;
+    border-radius: 20px;
+    padding: 10px;
+}
+.card-separador{
+	border-top: 2px solid #303393;
+}
+
+.separatorVertical{
+    border-right: 2px solid var(--cinza-escuro);
+}
+
+.separatorVerticalLeft{
+    border-left: 2px solid var(--cinza-escuro);
+}
+
+.form-check-input{
+    margin-top: .3rem;
+    margin-left: 20px;
+}
+.texto {
+    display: inline-block;
+}
+
+.color{
+    color: var(--azul-escuro);
+}
+    
+
+   
+
+
+
+
+/* NATIVE CSS*/
+
+body {
+    margin: 0;
+    font-family: Proxima;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
