@@ -1,4 +1,6 @@
 import React from 'react';
+
+// import file
 import Image24 from '../img/comoFunciona/empresa.png';
 
 export default class TelaEmpresa extends React.Component {

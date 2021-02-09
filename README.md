@@ -4,7 +4,7 @@ A plataforma **Empregô** é um projeto para a disciplina de Projeto 3 e Projeto
 
 #Como baixar
 Clone o projeto no seu computador usando o comando:
-`git clone https://gitlab.com/gmodeveloper/emprego.git`
+`git clone https://github.com/gmodeveloper/Emprego-IV.git`
 
 Entre na pasta clonada e inicie instale as dependências do projeto digitando:
 `npm install`

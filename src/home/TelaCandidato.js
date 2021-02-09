@@ -1,4 +1,6 @@
 import React from 'react';
+
+// import file
 import Image23 from '../img/comoFunciona/candidato.png';
 
 export default class TelaCandidato extends React.Component {

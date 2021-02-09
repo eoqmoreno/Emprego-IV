@@ -26,7 +26,6 @@ class App extends React.Component {
     super(props);
   }
   render() {
-
     var logado = "";
     if (this.props.login != "" && this.props.login[1] == "empresa") {
       logado = <NavbarEmp></NavbarEmp>

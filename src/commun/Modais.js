@@ -11,20 +11,20 @@ export class Modais extends React.Component {
         return (
             <div>
 
-                <div class="modal fade" tabindex="-1" id="cadastroVaga" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade" tabIndex="-1" id="cadastroVaga" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header border-0">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <div className="text-center">
                                     <img className="" src={cadVaga} alt=""></img>
                                 </div>
                                 <br />
-                                <div class="bg-cinza-claro">
+                                <div className="bg-cinza-claro">
                                     <h5 className="modal-title azulEscuro text-center bold">PRONTINHO!</h5>
                                     <span className="d-block w-100 text-center azulEscuro">Vaga cadastrada com sucesso!</span>
                                 </div>
@@ -40,20 +40,20 @@ export class Modais extends React.Component {
                     </div>
                 </div>
 
-                <div class="modal fade" tabindex="-1" id="cadastroCurriculo" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade" tabIndex="-1" id="cadastroCurriculo" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header border-0">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <div className="text-center">
                                     <img className="" src={cadVaga} alt=""></img>
                                 </div>
                                 <br />
-                                <div class="bg-cinza-claro">
+                                <div className="bg-cinza-claro">
                                     <h5 className="modal-title azulEscuro text-center bold">PRONTINHO!</h5>
                                     <span className="d-block w-100 text-center azulEscuro">Currículo cadastrado, boa sorte!</span>
                                 </div>
@@ -68,20 +68,20 @@ export class Modais extends React.Component {
                     </div>
                 </div>
 
-                <div class="modal fade" tabindex="-1" id="cadastroSucesso" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade" tabIndex="-1" id="cadastroSucesso" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header border-0">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <div className="text-center">
                                     <img className="" src={cadastro} alt=""></img>
                                 </div>
                                 <br />
-                                <div class="bg-cinza-claro">
+                                <div className="bg-cinza-claro">
                                     <h5 className="modal-title azulEscuro text-center bold">EBA! BOM TER VOCÊ AQUI</h5>
                                     <span className="d-block w-100 text-center azulEscuro">Estamos ao seu dispor</span>
                                 </div>
@@ -96,20 +96,20 @@ export class Modais extends React.Component {
                     </div>
                 </div>
 
-                <div class="modal fade" tabindex="-1" id="aguardeVaga" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade" tabIndex="-1" id="aguardeVaga" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header border-0">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <div className="text-center">
                                     <img className="" src={aguarde} alt=""></img>
                                 </div>
                                 <br />
-                                <div class="bg-cinza-claro">
+                                <div className="bg-cinza-claro">
                                     <h5 className="modal-title azulEscuro text-center bold">OPA! AGORA É SÓ ESPERAR</h5>
                                     <span className="d-block w-100 text-center azulEscuro">A empresa está olhando seu currículo</span>
                                 </div>
@@ -121,20 +121,20 @@ export class Modais extends React.Component {
                     </div>
                 </div>
 
-                <div class="modal fade" tabindex="-1" id="entrevistaSolicitada" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade" tabIndex="-1" id="entrevistaSolicitada" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header border-0">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <div className="text-center">
                                     <img className="" src={cadVaga} alt=""></img>
                                 </div>
                                 <br />
-                                <div class="bg-cinza-claro">
+                                <div className="bg-cinza-claro">
                                     <h5 className="modal-title azulEscuro text-center bold">PRONTINHO!</h5>
                                     <span className="d-block w-100 text-center azulEscuro">Entrevista solicitada!</span>
                                 </div>
