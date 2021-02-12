@@ -4,18 +4,22 @@ import axios from "axios";
 export const buscarCategoriaIniciado = createAction("BUSCAR_CATEGORIA");
 export const buscarCategoriaSucesso = createAction("BUSCAR_CATEGORIA_SUCESSO");
 
-const url = "http://127.0.0.1/categorias"
+const url = "https://emprego-bd-default-rtdb.firebaseio.com/categorias.json"
 
 export const buscarCategoria = () => {
-    return(dispatch, getState) => {
-        
+    return (dispatch, getState) => {
+
         dispatch(buscarCategoriaIniciado());
 
         axios({
             method: "GET",
             url: url,
         }).then(response => {
-            dispatch(buscarCategoriaSucesso(response.data));
+            let result = [];
+            for (let key in response.data) {
+                result.push(response.data[key])
+            }
+            dispatch(buscarCategoriaSucesso(result));
         })
     }
 }   

@@ -14,7 +14,6 @@ class Footer extends React.Component {
     }
 
     render() {
-
         var categoria = [];
 
         if(this.props.categorias != null){
@@ -22,7 +21,7 @@ class Footer extends React.Component {
                 (busca, index) => (
                     <Link className="btn col-3 btn-outline-primary d-inline-block bg-branco m-1 bold h-content" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
                 )
-            )
+             )
         }
 
         

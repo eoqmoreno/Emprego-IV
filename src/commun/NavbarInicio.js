@@ -65,9 +65,9 @@ class Navbar extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="form-group col-12 col-lg-3 text-left row m-0 p-0 bg-branco h-content" id="pesquisa">
+                        <div className="form-group col-12 col-lg-3 text-left row m-0 p-0 bg-branco h-content rounded" id="pesquisa">
                             <AutoComplete
-                                className="text-left d-block col-10 boder-0"
+                                className="text-left d-block col-10 boder-0 "
                                 options={options}
                                 onSelect={onSelect}
                                 placeholder="O que você procura?"
