@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/gmodeveloper/Emprego-IV/static/css/main.3b61af36.chunk.css",
+    "main.js": "/gmodeveloper/Emprego-IV/static/js/main.980ca42e.chunk.js",
+    "main.js.map": "/gmodeveloper/Emprego-IV/static/js/main.980ca42e.chunk.js.map",
+    "runtime-main.js": "/gmodeveloper/Emprego-IV/static/js/runtime-main.fc722100.js",
+    "runtime-main.js.map": "/gmodeveloper/Emprego-IV/static/js/runtime-main.fc722100.js.map",
+    "static/css/2.815e8445.chunk.css": "/gmodeveloper/Emprego-IV/static/css/2.815e8445.chunk.css",
+    "static/js/2.5fecbd5c.chunk.js": "/gmodeveloper/Emprego-IV/static/js/2.5fecbd5c.chunk.js",
+    "static/js/2.5fecbd5c.chunk.js.map": "/gmodeveloper/Emprego-IV/static/js/2.5fecbd5c.chunk.js.map",
+    "index.html": "/gmodeveloper/Emprego-IV/index.html",
+    "precache-manifest.610e3073bdee422ce1e5363369ce9a3d.js": "/gmodeveloper/Emprego-IV/precache-manifest.610e3073bdee422ce1e5363369ce9a3d.js",
+    "service-worker.js": "/gmodeveloper/Emprego-IV/service-worker.js",
+    "static/css/2.815e8445.chunk.css.map": "/gmodeveloper/Emprego-IV/static/css/2.815e8445.chunk.css.map",
+    "static/css/main.3b61af36.chunk.css.map": "/gmodeveloper/Emprego-IV/static/css/main.3b61af36.chunk.css.map",
+    "static/js/2.5fecbd5c.chunk.js.LICENSE.txt": "/gmodeveloper/Emprego-IV/static/js/2.5fecbd5c.chunk.js.LICENSE.txt",
+    "static/media/root.css": "/gmodeveloper/Emprego-IV/static/media/ProximaNova-Regular.410504d4.otf",
+    "static/media/candidato.png": "/gmodeveloper/Emprego-IV/static/media/candidato.bcdf934c.png",
+    "static/media/conexão.png": "/gmodeveloper/Emprego-IV/static/media/conexão.27d0be61.png",
+    "static/media/confiança.png": "/gmodeveloper/Emprego-IV/static/media/confiança.f2f780cd.png",
+    "static/media/educação.png": "/gmodeveloper/Emprego-IV/static/media/educação.c4895271.png",
+    "static/media/empresa.png": "/gmodeveloper/Emprego-IV/static/media/empresa.2ccd1b81.png",
+    "static/media/fluidez.png": "/gmodeveloper/Emprego-IV/static/media/fluidez.347f90a2.png",
+    "static/media/hf.png": "/gmodeveloper/Emprego-IV/static/media/hf.9b02ad6d.png",
+    "static/media/slids1.png": "/gmodeveloper/Emprego-IV/static/media/slids1.fa0c98ca.png",
+    "static/media/slids2.png": "/gmodeveloper/Emprego-IV/static/media/slids2.f5a9b72a.png",
+    "static/media/slids3.png": "/gmodeveloper/Emprego-IV/static/media/slids3.9820daf3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc722100.js",
+    "static/css/2.815e8445.chunk.css",
+    "static/js/2.5fecbd5c.chunk.js",
+    "static/css/main.3b61af36.chunk.css",
+    "static/js/main.980ca42e.chunk.js"
+  ]
+}
