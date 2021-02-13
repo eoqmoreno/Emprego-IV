@@ -31,8 +31,8 @@ export class Slider extends Component {
                         <img src={Carousel3Response} className="d-block d-lg-none w-100" alt="..." alt="" />
                     </div>
                 </div>
-                <h1 aria-hidden="true" className="carousel-control-prev azulClaro" href="#slideTelaInicial" role="button" data-slide="prev"><FiChevronLeft></FiChevronLeft></h1>
-                <h1 aria-hidden="true" className="carousel-control-next azulClaro" href="#slideTelaInicial" role="button" data-slide="next"><FiChevronRight></FiChevronRight></h1>
+                {/* <h1 aria-hidden="true" className="carousel-control-prev azulClaro" href="#slideTelaInicial" role="button" data-slide="prev"><FiChevronLeft></FiChevronLeft></h1>
+                <h1 aria-hidden="true" className="carousel-control-next azulClaro" href="#slideTelaInicial" role="button" data-slide="next"><FiChevronRight></FiChevronRight></h1> */}
             </div>
         )
     }

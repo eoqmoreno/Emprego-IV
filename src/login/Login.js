@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Logo from '../img/logo-icon.png';
 
 import { FiEye } from 'react-icons/fi';
@@ -29,16 +30,17 @@ class Login extends React.Component {
   }
 
   logar = (user) => {
-    if (this.props.empresas != null && this.props.candidatos) {
+    console.log(user)
+    if (this.props.empresas && this.props.candidatos) {
       this.props.empresas.map(
         (busca) => {
           if (busca.email == user.email && busca.senha == user.senha) {
-            this.props.logar(busca._id,"empresa");
+            this.props.logar(busca._id, "empresa");
           } else {
             this.props.candidatos.map(
               (busca) => {
                 if (busca.email == user.email && busca.senha == user.senha) {
-                  this.props.logar(busca._id,"candidato");
+                  this.props.logar(busca._id, "candidato");
                 }
               })
           }
@@ -61,7 +63,7 @@ class Login extends React.Component {
 
     return (
       <div className="modal fade" id="Login" role="dialog" aria-labelledby="Login" aria-hidden="true">
-        <div className="modal-dialog" role="document">
+        <div className="modal-dialog modal-sm" role="document">
           <div className="modal-content">
             <div className="modal-header border-0">
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -80,18 +82,12 @@ class Login extends React.Component {
               <form onSubmit={this.submeter}>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email</label>
+                  <label for="email" className="m-0">E-mail</label>
                   <input type="email" className="form-control" onChange={this.modificou} id="email" required />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="senha">Senha</label>
-                  <div className="input-group show_hide_password border">
-                    <input className="form-control border-0" type="password" required onChange={this.modificou} id="senha" />
-
-                    <div className="input-group-addon">
-                      <a href="" className="m-3"><FiEye></FiEye></a>
-                    </div>
-                  </div>
+                  <label for="senha" className="m-0">Senha</label>
+                  <input className="form-control" type="password" required onChange={this.modificou} id="senha" />
                 </div>
                 <div className="justify-content-center d-flex">
                   <input type="submit" className="btn btn-primary" value="Entrar"></input>
@@ -123,8 +119,8 @@ const mapearEstadoParaProps = (state, props) => {
 
 function mapearDispatchParaProps(dispatch) {
   return {
-    logar: (id,tipo) => {
-      dispatch(logar(id,tipo));
+    logar: (id, tipo) => {
+      dispatch(logar(id, tipo));
     },
     buscarEmpresa: () => {
       dispatch(buscarEmpresa())

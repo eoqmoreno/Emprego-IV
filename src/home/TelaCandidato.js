@@ -8,7 +8,7 @@ export default class TelaCandidato extends React.Component {
         return (
             <div className="row m-0 justify-content-center">
 
-                <div className="p-5 col-11">
+                <div className="pt-5 pb-5 col-11">
                     <div className="line-cinza-escuro row">
                         <div className="col-1"></div>
                         <div className="p-5 col-12 col-lg-5 text-left azulEscuro justify-content-center align-self-center separatorVertical">

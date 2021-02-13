@@ -65,9 +65,9 @@ class Navbar extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="form-group col-12 col-lg-3 text-left row m-0 p-0 bg-branco h-content rounded" id="pesquisa">
+                        <div className="form-group col-12 col-lg-3 bg-branco rounded d-flex align-items-center justify-content-center border" id="pesquisa">
                             <AutoComplete
-                                className="text-left d-block col-10 boder-0 "
+                                className="col-11 m-0 p-0"
                                 options={options}
                                 onSelect={onSelect}
                                 placeholder="O que você procura?"
@@ -75,7 +75,7 @@ class Navbar extends React.Component {
                                     option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                                 }
                             />
-                            <Link to={this.state.link} className="col-2 p-1"><FiSearch></FiSearch></Link>
+                            <Link to={this.state.link} className="col-1 p-1"><FiSearch></FiSearch></Link>
                         </div>
                     </div>
                 </nav>

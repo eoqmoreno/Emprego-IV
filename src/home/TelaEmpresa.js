@@ -7,7 +7,7 @@ export default class TelaEmpresa extends React.Component {
     render() {
         return (
             <div className="row m-0 justify-content-center">
-                <div className="p-5 col-11">
+                <div className="pt-5 col-11">
                     <div className="line-cinza-escuro row">
                         <div className="col-12 col-lg-6 justify-content-center text-center align-self-center ">
                             <img src={Image24} className="w-50" alt="Responsive image" />

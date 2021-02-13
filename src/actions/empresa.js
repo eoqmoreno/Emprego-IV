@@ -4,7 +4,7 @@ import $ from "jquery";
 export const buscarEmpresaIniciado = createAction("BUSCAR_EMPRESA");
 export const buscarEmpresaSucesso = createAction("BUSCAR_EMPRESA_SUCESSO");
 
-const url = "http://127.0.0.1/empresas"
+const url = "https://emprego-bd-default-rtdb.firebaseio.com/empresa.json"
 
 export const buscarEmpresa = () => {
     return(dispatch, getState) => {
@@ -15,7 +15,11 @@ export const buscarEmpresa = () => {
             method: "GET",
             url: url,
         }).then(response => {
-            dispatch(buscarEmpresaSucesso(response.data));
+            let result = [];
+            for (let key in response.data) {
+                result.push(response.data[key])
+            }
+            dispatch(buscarEmpresaSucesso(result));
         })
     }
 }   

@@ -4,7 +4,7 @@ import axios from "axios";
 export const buscarHabilidadeIniciado = createAction("BUSCAR_HABILIDADE");
 export const buscarHabilidadeSucesso = createAction("BUSCAR_HABILIDADE_SUCESSO");
 
-const url = "http://127.0.0.1/habilidades/"
+const url = "https://emprego-bd-default-rtdb.firebaseio.com/habilidade.json"
 
 export const buscarHabilidade = () => {
 
@@ -16,7 +16,11 @@ export const buscarHabilidade = () => {
             method: "GET",
             url: url,
         }).then(response => {
-            dispatch(buscarHabilidadeSucesso(response.data));
+            let result = [];
+            for (let key in response.data) {
+                result.push(response.data[key])
+            }
+            dispatch(buscarHabilidadeSucesso(result));
         })
     }
 }  
