@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/gmodeveloper/Emprego-IV/precache-manifest.610e3073bdee422ce1e5363369ce9a3d.js"
+  "/gmodeveloper/Emprego-IV/precache-manifest.9a88e62dd2367f45ff82a3f702b99d0b.js"
 );
 
 self.addEventListener('message', (event) => {
