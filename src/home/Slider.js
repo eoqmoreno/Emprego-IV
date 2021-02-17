@@ -8,9 +8,6 @@ import Carousel1Response from '../img/slide/responsive/slids1.png';
 import Carousel2Response from '../img/slide/responsive/slids2.png';
 import Carousel3Response from '../img/slide/responsive/slids3.png';
 
-// import icons
-import { FiChevronLeft } from "react-icons/fi";
-import { FiChevronRight } from "react-icons/fi";
 
 export class Slider extends Component {
     render() {

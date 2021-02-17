@@ -87,7 +87,7 @@ class Login extends React.Component {
                 </div>
                 <div className="form-group">
                   <label for="senha" className="m-0">Senha</label>
-                  <input className="form-control" type="password" required onChange={this.modificou} id="senha" />
+                  <input className="form-control" type="password" required onChange={this.modificou} id="senha"/>
                 </div>
                 <div className="justify-content-center d-flex">
                   <input type="submit" className="btn btn-primary" value="Entrar"></input>

@@ -19,7 +19,7 @@ class Footer extends React.Component {
         if(this.props.categorias != null){
             categoria = this.props.categorias.map(
                 (busca, index) => (
-                    <Link className="btn col-3 btn-outline-primary d-inline-block bg-branco m-1 bold h-content" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
+                    <Link className="btn col-3 btn-outline-primary m-1 bg-branco bold" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
                 )
              )
         }
@@ -27,9 +27,11 @@ class Footer extends React.Component {
         
         return (        
         
-            <footer className="row m-0 bg-cinza-claro pt-5">
-                <div className="col-4">
-                        <h5 className="bold azulEscuro">QUEM SOMOS?</h5>
+            <footer className="row col-12 p-0 m-0 bg-cinza-claro">
+                <div className="col-12 col-lg-3 p-5">
+
+                        <h3 className="azulEscuro bold d-none d-lg-block">SOBRE A PLATAFORMA</h3>
+                        <h4 className="azulEscuro bold d-lg-none d-block">SOBRE A PLATAFORMA</h4>
                         <Link className="azulEscuro" to="/">Sobre nós</Link>
                         <br/>
                         <Link className="azulEscuro" to="/">Contatos</Link>
@@ -38,7 +40,7 @@ class Footer extends React.Component {
                         <br/>
                         <Link className="azulEscuro" to="/">Políticas da Empregó</Link>
                 </div>
-                <div className="col-8 row m-0 text-center">
+                <div className="col-9 d-none d-lg-block text-center p-5">
                     {categoria}
                 </div>
                 <div className="col-12 text-center bold azulEscuro">© 2020 EMPREGÔ</div>   

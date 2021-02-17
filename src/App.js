@@ -40,7 +40,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           {logado}
 
           <Login></Login>

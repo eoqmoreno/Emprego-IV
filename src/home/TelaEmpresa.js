@@ -14,7 +14,10 @@ export default class TelaEmpresa extends React.Component {
                         </div>
 
                         <div className="p-5 col-12 col-lg-5 text-right azulEscuro justify-content-center align-self-center separatorVerticalLeft">
-                            <h3 className="azulEscuro bold">PARA AS EMPRESAS</h3>
+
+                            <h3 className="azulEscuro bold d-none d-lg-block">PARA AS EMPRESAS</h3>
+                            <h4 className="azulEscuro bold d-lg-none d-block">PARA AS EMPRESAS</h4>
+
                             <p className="">• Você se cadastra no site;</p>
                             <p className="">• Vai em "Publicar Vaga";</p>
                             <p className="">• Preenche os requisitos da vaga e pública</p>

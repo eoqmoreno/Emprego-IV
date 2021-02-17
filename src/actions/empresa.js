@@ -25,6 +25,7 @@ export const buscarEmpresa = () => {
 }   
 
 export const addEmpresa = (empresa) => {
+    console.log(empresa);
     return(dispatch, getState) => {
          axios({
             method:"POST",

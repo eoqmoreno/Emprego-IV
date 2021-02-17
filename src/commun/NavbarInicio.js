@@ -45,14 +45,17 @@ class Navbar extends React.Component {
 
         return (
             <div>
-                <nav className="navbar navbar-expand-lg bg-cinza-escuro py-4">
+                <nav className="navbar navbar-expand-lg bg-cinza-escuro py-3">
                     <Link className="navbar-brand" to="/">
-                        <img src={logo} alt=""></img>
+                        <img src={logo} alt="Logo da Empregô" className="d-none d-lg-block" ></img>
+                        <img src={logo} alt="Logo da Empregô" className="w-75 d-block d-lg-none" ></img>
+
                     </Link>
                     <button className="navbar-toggler w-auto" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuporta" aria-controls="conteudoNavbarSuporta" aria-expanded="false" aria-label="Alterna navegação">
                         <FiMenu className="azulEscuro"></FiMenu>
                     </button>
-                    <div className="row m-0 w-100">
+
+                    <div className="row m-0 w-100 h-100">
 
                         <div className="collapse navbar-collapse col-12 col-lg-9 justify-content-center align-self-center" id="conteudoNavbarSuporta">
                             <ul className="navbar-nav">
@@ -65,17 +68,17 @@ class Navbar extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="form-group col-12 col-lg-3 bg-branco rounded d-flex align-items-center justify-content-center border" id="pesquisa">
-                            <AutoComplete
-                                className="col-11 m-0 p-0"
-                                options={options}
-                                onSelect={onSelect}
-                                placeholder="O que você procura?"
-                                filterOption={(inputValue, option) =>
-                                    option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-                                }
-                            />
-                            <Link to={this.state.link} className="col-1 p-1"><FiSearch></FiSearch></Link>
+                        <div className="col-12 col-lg-3 d-flex align-items-center bg-branco rounded py-0 my-0" id="pesquisa">
+                                <AutoComplete
+                                    className="col-11 m-0 p-0"
+                                    options={options}
+                                    onSelect={onSelect}
+                                    placeholder="O que você procura?"
+                                    filterOption={(inputValue, option) =>
+                                        option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                                    }
+                                />
+                                <Link to={this.state.link} className="col-1 bg-branco m-0 p-0 "><FiSearch></FiSearch></Link>
                         </div>
                     </div>
                 </nav>

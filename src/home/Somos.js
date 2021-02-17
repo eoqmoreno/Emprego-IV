@@ -14,47 +14,49 @@ export class Somos extends Component {
         return (
             <div className="row m-0 pt-5 pb-5 bg-cinza-escuro d-flex justify-content-around">
 
-                <h3 className="bold azulEscuro col-12 text-center pb-3">NÓS SOMOS</h3>
+                <h3 className="bold azulEscuro col-12 text-center pb-3 d-none d-lg-block">NÓS SOMOS</h3>
+
+                <h4 className="bold azulEscuro col-12 text-center pb-3 d-lg-none d-block">NÓS SOMOS</h4>
 
                 <div className="col-lg-2 d-lg-block d-none bg-branco rounded text-center pt-5 pb-5">
                     <img className="w-50" src={Card1} alt="" />
                     <div className="card-separador m-2"></div>
-                    <h4 className="azulEscuro" type="button">Confiança</h4>
+                    <h4 className="azulEscuro">Confiança</h4>
                 </div>
 
                 <div className="col-lg-2 d-lg-block d-none bg-branco rounded text-center pt-5 pb-5">
                     <img className="w-50" src={Card2} alt="" />
                     <div className="card-separador m-2"></div>
-                    <h4 className="azulEscuro" type="button">Conectividade</h4>
+                    <h4 className="azulEscuro">Conectividade</h4>
                 </div>
 
                 <div className="col-lg-2 d-lg-block d-none bg-branco rounded text-center pt-5 pb-5">
                     <img className="w-50" src={Card3} alt="" />
                     <div className="card-separador m-2"></div>
-                    <h4 className="azulEscuro w-100" type="button">Fluidez</h4>
+                    <h4 className="azulEscuro w-100">Fluidez</h4>
                 </div>
 
                 <div id="sobrenos" className="carousel slide col-12 d-block d-lg-none" data-ride="carousel">
                     <div className="carousel-inner">
-                        <div class="carousel-item active p-5">
+                        <div class="carousel-item active pb-5 pr-5 pl-5">
                             <div className="bg-branco rounded text-center p-5">
                                 <img className="w-50" src={Card1} alt="" />
                                 <div className="card-separador m-2"></div>
-                                <h4 className="azulEscuro" type="button">Confiança</h4>
+                                <h4 className="azulEscuro">Confiança</h4>
                             </div>
                         </div>
-                        <div class="carousel-item p-5">
+                        <div class="carousel-item pb-5 pr-5 pl-5">
                             <div className="bg-branco rounded text-center p-5">
                                 <img className="w-50" src={Card2} alt="" />
                                 <div className="card-separador m-2"></div>
-                                <h4 className="azulEscuro" type="button">Conectividade</h4>
+                                <h4 className="azulEscuro">Conectividade</h4>
                             </div>
                         </div>
-                        <div class="carousel-item p-5">
+                        <div class="carousel-item pb-5 pr-5 pl-5">
                             <div className="bg-branco rounded text-center p-5">
                                 <img className="w-50" src={Card3} alt="" />
                                 <div className="card-separador m-2"></div>
-                                <h4 className="azulEscuro" type="button">Fluidez</h4>
+                                <h4 className="azulEscuro">Fluidez</h4>
                             </div>
                         </div>
                     </div>
