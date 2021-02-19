@@ -119,7 +119,7 @@ class CadastroVaga extends React.Component {
             <div>
                 <Breadcrumb caminho={caminho}></Breadcrumb>
                 <div className="container p-0">
-                    <div className="row">
+                    <div className="row m-0 p-0">
                         <div className="col-lg-6 col-12">
 
                             <br></br>

@@ -22,7 +22,7 @@ class CardVaga extends React.Component {
         var link = "/listacurriculos/" + this.props.idVaga;
 
         return (
-            <div className="card line-cinza-escuro col-4">
+            <div className="card line-cinza-escuro col-lg-3 col-12">
                 <div className="card-body text-center">
                     <img src={hf} className="rounded-circle line-azulEscuro mb-2"></img>
                     <br></br>

@@ -42,11 +42,10 @@ class VagasDisponiveis extends React.Component {
             if (this.props.vagas) {
                 vagas = this.props.vagas.map(
                     function (busca, index) {
-                        // if (busca.categoria == categoria) {
-                            // console.log(busca.categoria)
-                            // var a = empresas.map((a) => { if (a._id == busca.idEmpresa) { return a.nomeFantasia } })
-                            // return <CardVaga key={index} chave={index} profissao={busca.profissao} habTecnica={busca.habiTecnica} habInterpessoais={busca.habiInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
-                        // }
+                        if (busca.categoria == categoria) {
+                            var a = empresas.map((a) => { if (a.cnpj == busca.idEmpresa) { return a.nomeFantasia } })
+                            return <CardVaga key={index} chave={index} profissao={busca.profissao} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
+                        }
                         if (busca.profissao == categoria) {
                             var a = empresas.map((a) => { if (a.cnpj == busca.idEmpresa) { return a.nomeFantasia } });
                             return <CardVaga chave={index} key={index} profissao={busca.profissao} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
@@ -62,7 +61,7 @@ class VagasDisponiveis extends React.Component {
         return (
             <div>
                 <Breadcrumb caminho={caminho}></Breadcrumb>
-                <div className="card-deck p-0 row m-0 mb-5">
+                <div className="card-deck p-5">
                     {vagas}
                 </div>
             </div>
