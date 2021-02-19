@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "680b7a63c0e2a6a97ee29f053887be4c",
+    "revision": "cd8078264087d907ef471c79b98e8065",
     "url": "/Emprego-IV/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Emprego-IV/static/css/2.fce1768e.chunk.css"
   },
   {
-    "revision": "3d086965d9c2873890b9",
+    "revision": "e3eaa038d7f7333d40cc",
     "url": "/Emprego-IV/static/css/main.d7db581b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Emprego-IV/static/js/2.315558e1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3d086965d9c2873890b9",
-    "url": "/Emprego-IV/static/js/main.57e54cf6.chunk.js"
+    "revision": "e3eaa038d7f7333d40cc",
+    "url": "/Emprego-IV/static/js/main.66704d8d.chunk.js"
   },
   {
     "revision": "114b2f94051c7de6a268",
@@ -80,23 +80,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Emprego-IV/static/media/slids1.718297ec.png"
   },
   {
-    "revision": "fa0c98ca894a873b2e2472612adfebe7",
-    "url": "/Emprego-IV/static/media/slids1.fa0c98ca.png"
+    "revision": "979742884c5e88a2ecb76b9dc4b9435b",
+    "url": "/Emprego-IV/static/media/slids1.97974288.png"
+  },
+  {
+    "revision": "32b77faeec18593c625a7f62aef5b978",
+    "url": "/Emprego-IV/static/media/slids2.32b77fae.png"
   },
   {
     "revision": "e56b098f54fe4f0ebb5630e2fa64b2fd",
     "url": "/Emprego-IV/static/media/slids2.e56b098f.png"
   },
   {
-    "revision": "f5a9b72a1a1078f1115586f30aaa2852",
-    "url": "/Emprego-IV/static/media/slids2.f5a9b72a.png"
-  },
-  {
     "revision": "14df3b9a8c26edbeaa40ad464db356f9",
     "url": "/Emprego-IV/static/media/slids3.14df3b9a.png"
   },
   {
-    "revision": "9820daf38aaaba40e35df81df99e57d4",
-    "url": "/Emprego-IV/static/media/slids3.9820daf3.png"
+    "revision": "f2d854c2db5fbf9a3177d232862f938b",
+    "url": "/Emprego-IV/static/media/slids3.f2d854c2.png"
   }
 ]);
