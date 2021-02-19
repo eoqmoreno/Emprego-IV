@@ -82,11 +82,11 @@ class Login extends React.Component {
               <form onSubmit={this.submeter}>
 
                 <div className="form-group">
-                  <label for="email" className="m-0">E-mail</label>
+                  <label htmlFor="email" className="m-0">E-mail</label>
                   <input type="email" className="form-control" onChange={this.modificou} id="email" required />
                 </div>
                 <div className="form-group">
-                  <label for="senha" className="m-0">Senha</label>
+                  <label htmlFor="senha" className="m-0">Senha</label>
                   <input className="form-control" type="password" required onChange={this.modificou} id="senha"/>
                 </div>
                 <div className="justify-content-center d-flex">

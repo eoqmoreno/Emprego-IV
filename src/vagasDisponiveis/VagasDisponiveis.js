@@ -21,7 +21,7 @@ class VagasDisponiveis extends React.Component {
         this.props.buscarVaga();
         this.props.buscarEmpresa();
         this.props.buscarCandidato();
-        this.props.buscarCurriculo();
+        // this.props.buscarCurriculo();
     }
 
     render() {
@@ -34,18 +34,21 @@ class VagasDisponiveis extends React.Component {
         if (this.props.empresas != null) {
             empresas = this.props.empresas
         }
+        
         var categoria = this.props.match.params.categoria;
 
+        
         if (categoria != null) {
-            if (this.props.vagas != null) {
+            if (this.props.vagas) {
                 vagas = this.props.vagas.map(
                     function (busca, index) {
-                        if (busca.categoria == categoria) {
-                            var a = empresas.map((a) => { if (a._id == busca.idEmpresa) { return a.nomeFantasia } });
-                            return <CardVaga key={index} chave={index} profissao={busca.profissao} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
-                        }
+                        // if (busca.categoria == categoria) {
+                            // console.log(busca.categoria)
+                            // var a = empresas.map((a) => { if (a._id == busca.idEmpresa) { return a.nomeFantasia } })
+                            // return <CardVaga key={index} chave={index} profissao={busca.profissao} habTecnica={busca.habiTecnica} habInterpessoais={busca.habiInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
+                        // }
                         if (busca.profissao == categoria) {
-                            var a = empresas.map((a) => { if (a._id == busca.idEmpresa) { return a.nomeFantasia } });
+                            var a = empresas.map((a) => { if (a.cnpj == busca.idEmpresa) { return a.nomeFantasia } });
                             return <CardVaga chave={index} key={index} profissao={busca.profissao} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
                         }
                     }
@@ -73,7 +76,7 @@ const mapearEstadoParaProps = (state, props) => {
         empresas: state.empresa.empresas,
         login: state.login.login,
         candidatos: state.candidato.candidatos,
-        curriculos: state.curriculo.curriculos,
+        // curriculos: state.curriculo.curriculos,
     }
 }
 
@@ -88,9 +91,9 @@ const mapearDispatchParaProps = (dispatch) => {
         buscarCandidato: () => {
             dispatch(buscarCandidato());
         },
-        buscarCurriculo: () => {
-            dispatch(buscarCurriculo());
-        }
+        // buscarCurriculo: () => {
+        //     dispatch(buscarCurriculo());
+        // }
     }
 }
 

@@ -14,7 +14,7 @@ export default class TelaCandidato extends React.Component {
                         <div className="p-5 col-12 col-lg-5 text-left azulEscuro justify-content-center align-self-center separatorVertical">
 
                             <h3 className="azulEscuro bold d-none d-lg-block">PARA OS CANDIDATOS</h3>
-                            <h4 className="azulEscuro bold d-lg-none d-block">PARA OS CANDIDATOS</h4>
+                            <h5 className="azulEscuro bold d-lg-none d-block">PARA OS CANDIDATOS</h5>
 
                             <p className="">   • Você se cadastra no site;</p>
                             <p className="">• Pesquisa pela vaga que deseja;</p>

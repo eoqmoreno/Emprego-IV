@@ -1,6 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import $ from "jquery";
+import { storage } from "../firebase/firebaseConfig";
 export const buscarCandidatoIniciado = createAction("BUSCAR_CANDIDATO");
 export const buscarCandidatoSucesso = createAction("BUSCAR_CANDIDATO_SUCESSO");
 
@@ -22,7 +23,9 @@ export const buscarCandidato = () => {
     }
 }   
 
-export const addCandidato = (candidato) => {
+export const addCandidato = (candidato, img) => {
+    console.log(candidato, img)
+    storage.ref('candidato/'+ img.name).put(img);
     return(dispatch, getState) => {
         axios({
             method:"POST",
@@ -35,7 +38,5 @@ export const addCandidato = (candidato) => {
             $("#cadastroSucesso").modal();
             });
         })
-
-
     }
 }

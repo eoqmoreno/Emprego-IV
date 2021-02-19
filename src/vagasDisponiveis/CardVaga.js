@@ -6,7 +6,6 @@ import $, { event } from "jquery";
 import { connect } from 'react-redux';
 import { buscarCurriculo } from '../actions/curriculo';
 import { buscarCandidato } from '../actions/candidato';
-import Curriculo from '../listaDeCandidatos/Curriculo';
 
 class CardVaga extends React.Component {
     constructor(props) {
@@ -15,16 +14,17 @@ class CardVaga extends React.Component {
 
     componentDidMount = () => {
         this.props.buscarCandidato();
-        this.props.buscarCurriculo();
+        // this.props.buscarCurriculo();
     }
 
     render() {
+
         var link = "/listacurriculos/" + this.props.idVaga;
 
         return (
             <div className="card line-cinza-escuro col-4">
                 <div className="card-body text-center">
-                    <img src={hf} class="rounded-circle line-azulEscuro mb-2"></img>
+                    <img src={hf} className="rounded-circle line-azulEscuro mb-2"></img>
                     <br></br>
                     <span className="">{this.props.empresa}</span>
 
@@ -44,22 +44,22 @@ class CardVaga extends React.Component {
                     <Link to={link} className="btn btn-primary">Candidatar</Link>
                 </div>
 
-                <div class="modal fade" tabindex="-1" id={"modal" + this.props.chave} role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade" tabIndex="-1" id={"modal" + this.props.chave} role="dialog" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header border-0">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <div className="text-center">
                                     <img className="rounded-circle line-azulEscuro mb-2" src={hf} alt=""></img>
                                     <br></br>
                                     <span className="">{this.props.empresa}</span>
                                 </div>
                                 <hr></hr>
-                                <div class="">
+                                <div className="">
                                     <span className="d-block w-100 text-center bold">{this.props.profissao}</span>
                                     <span className="d-block w-100 text-center">Salário de <b>R${this.props.salario}</b></span>
                                     <span className="d-block w-100 text-center">{this.props.dias}</span>
@@ -82,7 +82,7 @@ class CardVaga extends React.Component {
 
 const mapearEstadoParaProps = (state, props) => {
     return {
-        curriculos: state.curriculo.curriculos,
+        // curriculos: state.curriculo.curriculos,
         candidatos: state.candidato.candidatos,
         login: state.login.login,
     }
@@ -90,9 +90,9 @@ const mapearEstadoParaProps = (state, props) => {
 
 const mapearDispatchParaProps = (dispatch) => {
     return {
-        buscarCurriculo: () => {
-            dispatch(buscarCurriculo());
-        },
+        // buscarCurriculo: () => {
+        //     dispatch(buscarCurriculo());
+        // },
 
         buscarCandidato: () => {
             dispatch(buscarCandidato());

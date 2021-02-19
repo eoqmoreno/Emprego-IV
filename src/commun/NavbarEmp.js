@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { buscarCategoria } from '../actions/categoria';
 import { buscarProfissao } from '../actions/profissao';
 import { AutoComplete } from 'antd';
-import $ from 'jquery';
 
 
 class Navbar extends React.Component {

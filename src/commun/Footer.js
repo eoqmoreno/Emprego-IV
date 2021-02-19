@@ -27,7 +27,7 @@ class Footer extends React.Component {
         
         return (        
         
-            <footer className="row col-12 p-0 m-0 bg-cinza-claro">
+            <footer className="row col-12 p-0 m-0 mt-5 bg-cinza-claro">
                 <div className="col-12 col-lg-3 p-5">
 
                         <h3 className="azulEscuro bold d-none d-lg-block">SOBRE A PLATAFORMA</h3>
@@ -43,7 +43,7 @@ class Footer extends React.Component {
                 <div className="col-9 d-none d-lg-block text-center p-5">
                     {categoria}
                 </div>
-                <div className="col-12 text-center bold azulEscuro">© 2020 EMPREGÔ</div>   
+                <div className="col-12 text-center bold azulEscuro">© 2021 EMPREGÔ</div>   
 
             </footer>
 

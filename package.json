@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/storage": "^0.4.2",
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -14,6 +15,7 @@
     "bootstrap-table": "^1.18.0",
     "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.22",
+    "firebase": "^8.2.7",
     "jquery": "^3.5.1",
     "jquery-mask-plugin": "^1.14.16",
     "popper.js": "^1.16.1",

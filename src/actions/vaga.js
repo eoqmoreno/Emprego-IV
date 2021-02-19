@@ -4,7 +4,7 @@ import $ from "jquery";
 export const buscarVagaIniciado = createAction("BUSCAR_VAGA");
 export const buscarVagaSucesso = createAction("BUSCAR_VAGA_SUCESSO");
 
-const url = "http://127.0.0.1/vagas/"
+const url = "https://emprego-bd-default-rtdb.firebaseio.com/vaga.json"
 
 export const buscarVaga = () => {
     return (dispatch, getState) => {
@@ -14,7 +14,11 @@ export const buscarVaga = () => {
             method: "GET",
             url: url,
         }).then(response => {
-            dispatch(buscarVagaSucesso(response.data));
+            let result = [];
+            for (let key in response.data) {
+                result.push(response.data[key])
+            }
+            dispatch(buscarVagaSucesso(result));
         })
     }
 }

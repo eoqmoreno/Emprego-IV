@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../img/logo-icon.png';
+import $ from 'jquery';
 
 export default class CadastroOpcao extends React.Component {
 
@@ -20,7 +22,8 @@ export default class CadastroOpcao extends React.Component {
               <br />
               <h5 className="modal-title azulEscuro text-center bold">COMO QUER ENTRAR?</h5>
               <div className="row justify-content-center d-flex">
-                <button type="button" className="btn bg-azulEscuro branco m-4" data-toggle="modal" data-target="#CadastroPessoa_Fisica" data-dismiss="modal">Candidato</button>
+                <Link className="btn bg-azulEscuro branco m-4" to="/cadastroCandidato" onClick={()=>{$('#cadastroOpcao').modal('hide');}}>Candidato</Link>
+
                 <button data-toggle="modal" data-target="#CadastroPessoa_Juridica" data-dismiss="modal" type="button" className="btn bg-azulClaro branco m-4">Empresa</button>
               </div>
             </div>

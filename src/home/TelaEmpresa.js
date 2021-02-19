@@ -10,13 +10,13 @@ export default class TelaEmpresa extends React.Component {
                 <div className="pt-5 col-11">
                     <div className="line-cinza-escuro row">
                         <div className="col-12 col-lg-6 justify-content-center text-center align-self-center ">
-                            <img src={Image24} className="w-50" alt="Responsive image" />
+                            <img src={Image24} className="w-50" alt="Responsive"></img>
                         </div>
 
                         <div className="p-5 col-12 col-lg-5 text-right azulEscuro justify-content-center align-self-center separatorVerticalLeft">
 
                             <h3 className="azulEscuro bold d-none d-lg-block">PARA AS EMPRESAS</h3>
-                            <h4 className="azulEscuro bold d-lg-none d-block">PARA AS EMPRESAS</h4>
+                            <h5 className="azulEscuro bold d-lg-none d-block">PARA AS EMPRESAS</h5>
 
                             <p className="">• Você se cadastra no site;</p>
                             <p className="">• Vai em "Publicar Vaga";</p>

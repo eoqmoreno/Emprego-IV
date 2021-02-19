@@ -1,25 +1,24 @@
 import React from 'react'
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 
 import Footer from './commun/Footer';
 import Login from './login/Login';
 import CadastroOpcao from './cadastroConta/CadastroOpcao';
-import CadastroCandidato from './cadastroConta/CadastroCandidato';
 import CadastroEmpresa from './cadastroConta/CadastroEmpresa';
 import Home from './home/TelaInicial';
-import PublicarVaga from './publicarVaga/PublicarVaga';
 import ListaDeCandidatos from './listaDeCandidatos/ListaDeCandidatos';
 import CadastroCurriculo from './cadastroCurriculo/CadastroCurriculo';
 import VagasDisponiveis from './vagasDisponiveis/VagasDisponiveis';
 import Navbar from './commun/NavbarInicio';
 import NavbarCan from './commun/NavbarCan';
 import NavbarEmp from './commun/NavbarEmp';
+import CadastroVaga from './cadastroVaga/CadastroVaga';
 
-import { IconName } from "react-icons/fi";
 import { connect } from 'react-redux';
 import Modais from './commun/Modais';
 import VagasEmpresa from './vagasDisponiveis/VagasEmpresa';
 import ListaCurriculos from './vagasDisponiveis/ListaCurriculos';
+import Candidato from './cadastroConta/Candidato';
 
 class App extends React.Component {
   constructor(props) {
@@ -46,7 +45,6 @@ class App extends React.Component {
           <Login></Login>
 
           <CadastroOpcao></CadastroOpcao>
-          <CadastroCandidato></CadastroCandidato>
           <CadastroEmpresa></CadastroEmpresa>
           <Modais></Modais>
 
@@ -54,8 +52,12 @@ class App extends React.Component {
             <Home></Home>
           </Route>
 
+          <Route path="/cadastroCandidato">
+            <Candidato></Candidato>
+          </Route>
+
           <Route path="/cadastrarvaga">
-            <PublicarVaga></PublicarVaga>
+            <CadastroVaga></CadastroVaga>
           </Route>
 
           <Route path="/cadastrarcurriculo">

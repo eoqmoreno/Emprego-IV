@@ -8,7 +8,7 @@ import Breadcrumb from '../commun/Breadcrumb';
 import { Select } from 'antd';
 
 
-class cadastroVaga extends React.Component {
+class CadastroVaga extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -260,4 +260,4 @@ const mapearDispatchParaProps = (dispatch) => {
     }
 }
 
-export default connect(mapearEstadoParaProps, mapearDispatchParaProps)(cadastroVaga);
+export default connect(mapearEstadoParaProps, mapearDispatchParaProps)(CadastroVaga);
