@@ -23,8 +23,7 @@ export default class CadastroOpcao extends React.Component {
               <h5 className="modal-title azulEscuro text-center bold">COMO QUER ENTRAR?</h5>
               <div className="row justify-content-center d-flex">
                 <Link className="btn bg-azulEscuro branco m-4" to="/cadastroCandidato" onClick={()=>{$('#cadastroOpcao').modal('hide');}}>Candidato</Link>
-
-                <button data-toggle="modal" data-target="#CadastroPessoa_Juridica" data-dismiss="modal" type="button" className="btn bg-azulClaro branco m-4">Empresa</button>
+                <Link className="btn bg-azulClaro branco m-4" to="/cadastroEmpresa" onClick={()=>{$('#cadastroOpcao').modal('hide');}}>Empresa</Link>
               </div>
             </div>
           </div>

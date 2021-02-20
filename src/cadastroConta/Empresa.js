@@ -2,20 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../commun/Breadcrumb';
-import { addCandidato } from '../actions/candidato';
-import {useLocation} from 'react-router-dom';
 import Perfil from '../img/Group 25.png'
 import { FiEye } from "react-icons/fi";
+import { addEmpresa } from '../actions/empresa';
 
-class Candidato extends React.Component {
+class Empresa extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            nome: "",
+            nomeJuridico: "",
+            nomeFantasia: "",
+            cnpj: "",
+            endereco: "",
+            descricao: "",
             email: "",
             senha: "",
             telefone: "",
-            nascimento: "",
             tipo: "password",
             render: Perfil,
             img: "",
@@ -58,14 +60,17 @@ class Candidato extends React.Component {
     enviar = (event) => {
         event.preventDefault()
         let candidato = {
-            nome: this.state.nome,
+            nomeJuridico: this.state.nomeJuridico,
+            nomeFantasia: this.state.nomeFantasia,
+            cnpj: this.state.cnpj,
+            endereco: this.state.endereco,
+            descricao: this.state.descricao,
             email: this.state.email,
             telefone: this.state.telefone,
-            data: this.state.nascimento,
             senha: this.state.senha,
         }
-        
-        this.props.addCandidato(candidato, this.state.img)
+
+        this.props.addEmpresa(candidato, this.state.img)
     }
 
     render() {
@@ -91,8 +96,33 @@ class Candidato extends React.Component {
                             <form onSubmit={this.enviar}>
 
                                 <div className="form-group">
-                                    <label className="color" htmlFor="nome">Nome completo:</label>
-                                    <input type="text" className="form-control" id="nome" onChange={this.modificou} required></input>
+                                    <label className="color" htmlFor="nome">Nome jurídico da empresa:</label>
+                                    <input type="text" className="form-control" id="nomeJuridico" onChange={this.modificou} required></input>
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="color" htmlFor="nome">Nome fantasia:</label>
+                                    <input type="text" className="form-control" id="nomeFantasia" onChange={this.modificou} required></input>
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="color" htmlFor="nome">CNPJ:</label>
+                                    <input type="text" className="form-control cnpj" id="cnpj" placeholder="00.000.000/0000-00" onChange={this.modificou} required></input>
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="color" htmlFor="nome">Endereço completo:</label>
+                                    <input type="text" className="form-control" id="endereco" placeholder="Rua, Nº, Sala, Bairro" onChange={this.modificou} required></input>
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="color">Telefone:</label>
+                                    <input type="tel" id="telefone" onChange={this.modificou} placeholder="(00) 0 0000-0000" className="form-group telefone w-100" required></input>
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="color" htmlFor="email">Descrição da empresa:</label>
+                                    <textarea id="descricao" onChange={this.modificou} className="form-control" required placeholder="Ramo de atuação, missão, tempo de mercado"></textarea>
                                 </div>
 
                                 <div className="form-group">
@@ -102,24 +132,13 @@ class Candidato extends React.Component {
 
                                 <div className="input-group">
                                     <label className="color col-12 p-0 m-0">Senha:</label>
-                                    <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required/>
+                                    <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required />
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
                                     </div>
                                     <small className="col-12 m-0 p-0 azulEscuro text-right">Deve ter de 8 a 20 caracteres</small>
                                 </div>
 
-                                <div className="form-row">
-                                    <div className="input-group col">
-                                        <label className="color">Telefone:</label>
-                                        <input type="tel" id="telefone" onChange={this.modificou} className="form-group telefone w-100" placeholder="(00) 0 0000-0000" required></input>
-                                    </div>
-
-                                    <div className="input-group col">
-                                        <label className="color m-0 p-0">Data:</label>
-                                        <input type="date" id="nascimento" onChange={this.modificou} className="form-group w-100" required></input>
-                                    </div>
-                                </div>
                                 <div className="col p-0 text-right">
                                     <button type="submit" className="btn btn-primary m-0">Salvar currículo</button>
                                     <Link to="/" className="btn btn-outline-danger ml-2 m-0">Cancelar</Link>
@@ -146,10 +165,10 @@ class Candidato extends React.Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addCandidato: (candidato,img) => {
-            dispatch(addCandidato(candidato,img));
+        addEmpresa: (empresa, img) => {
+            dispatch(addEmpresa(empresa, img));
         }
     }
 }
 
-export default connect(null, mapDispatchToProps)(Candidato);
+export default connect(null, mapDispatchToProps)(Empresa);

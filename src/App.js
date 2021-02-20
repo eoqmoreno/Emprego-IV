@@ -19,6 +19,7 @@ import Modais from './commun/Modais';
 import VagasEmpresa from './vagasDisponiveis/VagasEmpresa';
 import ListaCurriculos from './vagasDisponiveis/ListaCurriculos';
 import Candidato from './cadastroConta/Candidato';
+import Empresa from './cadastroConta/Empresa';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,10 @@ class App extends React.Component {
 
           <Route exact path="/">
             <Home></Home>
+          </Route>
+
+          <Route path="/cadastroEmpresa">
+            <Empresa></Empresa>
           </Route>
 
           <Route path="/cadastroCandidato">

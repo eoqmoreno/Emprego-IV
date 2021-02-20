@@ -24,7 +24,6 @@ export const buscarCandidato = () => {
 }   
 
 export const addCandidato = (candidato, img) => {
-    console.log(candidato, img)
     storage.ref('candidato/'+ img.name).put(img);
     return(dispatch, getState) => {
         axios({
@@ -34,7 +33,6 @@ export const addCandidato = (candidato, img) => {
         }).then(response =>{
             dispatch(buscarCandidato());
             $(document).ready(function () {
-            $("#CadastroPessoa_Fisica").modal("hide");
             $("#cadastroSucesso").modal();
             });
         })

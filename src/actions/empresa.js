@@ -1,6 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import $ from "jquery";
+import { storage } from "../firebase/firebaseConfig";
 export const buscarEmpresaIniciado = createAction("BUSCAR_EMPRESA");
 export const buscarEmpresaSucesso = createAction("BUSCAR_EMPRESA_SUCESSO");
 
@@ -24,8 +25,8 @@ export const buscarEmpresa = () => {
     }
 }   
 
-export const addEmpresa = (empresa) => {
-    console.log(empresa);
+export const addEmpresa = (empresa, img) => {
+    storage.ref('empresa/'+empresa.email).put(img)
     return(dispatch, getState) => {
          axios({
             method:"POST",

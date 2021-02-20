@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import cadVaga from '../img/cadVaga.png'
 import cadastro from '../img/cadastro.png'
 import aguarde from '../img/aguarde.png'
-
+import $ from 'jquery';
 
 
 export class Modais extends React.Component {
@@ -90,7 +90,7 @@ export class Modais extends React.Component {
                                 <span>Clique em Entrar para acessar ser perfil</span>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <input type="submit" className="btn btn-primary" value="Entrar" data-toggle="modal" data-target="#Login" data-dismiss="modal"></input>
+                                <Link className="btn btn-primary" onClick={()=>{$('#cadastroSucesso').modal('hide');}} to="/">Entrar</Link>
                             </div>
                         </div>
                     </div>
