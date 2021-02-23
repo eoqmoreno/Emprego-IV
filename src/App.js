@@ -4,14 +4,11 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import Footer from './commun/Footer';
 import Login from './login/Login';
 import CadastroOpcao from './cadastroConta/CadastroOpcao';
-import CadastroEmpresa from './cadastroConta/CadastroEmpresa';
 import Home from './home/TelaInicial';
 import ListaDeCandidatos from './listaDeCandidatos/ListaDeCandidatos';
 import CadastroCurriculo from './cadastroCurriculo/CadastroCurriculo';
 import VagasDisponiveis from './vagasDisponiveis/VagasDisponiveis';
 import Navbar from './commun/NavbarInicio';
-import NavbarCan from './commun/NavbarCan';
-import NavbarEmp from './commun/NavbarEmp';
 import CadastroVaga from './cadastroVaga/CadastroVaga';
 
 import { connect } from 'react-redux';
@@ -25,28 +22,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    var logado = "";
-    if (this.props.login != "" && this.props.login[1] == "empresa") {
-      logado = <NavbarEmp></NavbarEmp>
-    } else {
-      if (this.props.login != "" && this.props.login[1] == "candidato") {
-        logado = <NavbarCan></NavbarCan>
-      } else {
-        logado = <Navbar></Navbar>
-      }
-    }
-
-
     return (
       <div>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
-          {logado}
 
+          <Navbar></Navbar>
+          
           <Login></Login>
 
           <CadastroOpcao></CadastroOpcao>
-          <CadastroEmpresa></CadastroEmpresa>
           <Modais></Modais>
 
           <Route exact path="/">

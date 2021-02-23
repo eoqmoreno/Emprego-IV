@@ -25,7 +25,7 @@ export class Somos extends Component {
                     <div className="card-separador m-2"></div>
                     <h4 className="azulEscuro">Confiança</h4>
                     <div className="collapse multi-collapse mt-4" id="confianca">
-                        <span class="text-right">
+                        <span className="text-right">
                             Aqui é um ambiente 100% comunicativo. Notificamos você a cada novo passo do processo e guardamos todas as suas informações de forma segura.
                         </span>
                     </div>
@@ -38,7 +38,7 @@ export class Somos extends Component {
                     <div className="card-separador m-2"></div>
                     <h4 className="azulEscuro">Conectividade</h4>
                     <div className="collapse multi-collapse mt-4" id="conectividade">
-                        <span class="text-right">
+                        <span className="text-right">
                             Conectamos empresas e candidatos com seus respectivos interesses. Nossa meta é iniciar um novo ciclo pra você.
                         </span>
                     </div>
@@ -51,7 +51,7 @@ export class Somos extends Component {
                     <div className="card-separador m-2"></div>
                     <h4 className="azulEscuro w-100">Fluidez</h4>
                     <div className="collapse multi-collapse mt-4" id="fluidez">
-                        <span class="text-right">
+                        <span className="text-right">
                             Buscamos incessantemente melhorar sua experiência em nossa plataforma. Para que você encontre aquilo que procura de forma simples e eficiente.
                         </span>
                     </div>
@@ -67,7 +67,7 @@ export class Somos extends Component {
                                 <div className="card-separador m-2"></div>
                                 <h4 className="azulEscuro">Confiança</h4>
                                 <div className="collapse multi-collapse mt-4" id="confianca">
-                                    <span class="text-right">
+                                    <span className="text-right">
                                         Aqui é um ambiente 100% comunicativo. Notificamos você a cada novo passo do processo e guardamos todas as suas informações de forma segura.
                                     </span>
                                 </div>
@@ -81,7 +81,7 @@ export class Somos extends Component {
                                 <div className="card-separador m-2"></div>
                                 <h4 className="azulEscuro">Conectividade</h4>
                                 <div className="collapse multi-collapse mt-4" id="conectividade">
-                                    <span class="text-right">
+                                    <span className="text-right">
                                         Conectamos empresas e candidatos com seus respectivos interesses. Nossa meta é iniciar um novo ciclo pra você.
                                     </span>
                                 </div>
@@ -95,7 +95,7 @@ export class Somos extends Component {
                                 <div className="card-separador m-2"></div>
                                 <h4 className="azulEscuro">Fluidez</h4>
                                 <div className="collapse multi-collapse mt-4" id="fluidez">
-                                    <span class="text-right">
+                                    <span className="text-right">
                                         Buscamos incessantemente melhorar sua experiência em nossa plataforma. Para que você encontre aquilo que procura de forma simples e eficiente.
                                     </span>
                                 </div>

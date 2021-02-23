@@ -7,6 +7,27 @@ import { connect } from 'react-redux';
 import { buscarCategoria } from '../actions/categoria';
 import { buscarProfissao } from '../actions/profissao';
 import { AutoComplete } from 'antd';
+import NavbarEmp from './NavbarEmp';
+import NavbarCan from './NavbarCan';
+import { deslogar } from '../actions/login';
+
+
+function navbarDefault() {
+    return (
+        <div className="collapse navbar-collapse col-12 col-lg-9 justify-content-center align-self-center" id="conteudoNavbarSuporta">
+            <ul className="navbar-nav">
+                <li className="nav-item text-center">
+                    <Link className="bg-transparent btn m-2" to="/">Página Inicial</Link>
+                </li>
+                <li className="nav-item text-center">
+                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#Login" data-dismiss="modal">
+                        Entrar
+                        </button>
+                </li>
+            </ul>
+        </div>
+    )
+}
 
 
 
@@ -15,6 +36,7 @@ class Navbar extends React.Component {
         super(props);
         this.state = {
             link: "/",
+            login: [],
         }
     }
 
@@ -36,10 +58,21 @@ class Navbar extends React.Component {
         }
 
         const onSelect = (value) => {
-            var a = "vagasdisponiveis/" + value;
+            var values = "vagasdisponiveis/" + value;
             this.setState({
-                link: a,
+                link: values,
             })
+        }
+
+        let render = "";
+        if (this.props.login.length > 0) {
+            if (this.props.login[1] == "empresa") {
+                render = <NavbarEmp sair={this.props.deslogar}></NavbarEmp>
+            }else{
+                render = <NavbarCan sair={this.props.deslogar}></NavbarCan>
+            }
+        } else {
+            render = navbarDefault()
         }
 
         return (
@@ -56,32 +89,23 @@ class Navbar extends React.Component {
 
                     <div className="row m-0 w-100 h-100">
 
-                        <div className="collapse navbar-collapse col-12 col-lg-9 justify-content-center align-self-center" id="conteudoNavbarSuporta">
-                            <ul className="navbar-nav">
-                                <li className="nav-item text-center">
-                                    <Link className="bg-transparent btn m-2" to="/">Pagina Inicial</Link>
-                                </li>
-                                <li className="nav-item text-center">
-                                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#Login" data-dismiss="modal">
-                                        Entrar</button>
-                                </li>
-                            </ul>
-                        </div>
+                        {render}
+
                         <div className="col-12 col-lg-3 d-flex align-items-center bg-branco rounded py-0 my-0" id="pesquisa">
-                                <AutoComplete
-                                    className="col-11 m-0 p-0"
-                                    options={options}
-                                    onSelect={onSelect}
-                                    placeholder="O que você procura?"
-                                    filterOption={(inputValue, option) =>
-                                        option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-                                    }
-                                />
-                                <Link to={this.state.link} className="col-1 bg-branco m-0 p-0 "><FiSearch></FiSearch></Link>
+                            <AutoComplete
+                                className="col-11 m-0 p-0"
+                                options={options}
+                                onSelect={onSelect}
+                                placeholder="O que você procura?"
+                                filterOption={(inputValue, option) =>
+                                    option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                                }
+                            />
+                            <Link to={this.state.link} className="col-1 bg-branco m-0 p-0 "><FiSearch></FiSearch></Link>
                         </div>
                     </div>
                 </nav>
-            </div>
+            </div >
         )
     }
 }
@@ -90,6 +114,7 @@ const mapearEstadoParaProps = (state, props) => {
     return {
         categorias: state.categoria.categorias,
         profissoes: state.profissao.profissoes,
+        login: state.login.login,
     }
 }
 
@@ -101,6 +126,9 @@ const mapearDispatchParaProps = (dispatch) => {
         buscarProfissao: () => {
             dispatch(buscarProfissao());
         },
+        deslogar: () => {
+            dispatch(deslogar());
+        }
     }
 }
 

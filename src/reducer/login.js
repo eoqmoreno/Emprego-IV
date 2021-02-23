@@ -5,11 +5,11 @@ const estadoInicial = {
     login: [],
 };
 
-export const reducerLogin = createReducer(estadoInicial,{
-    [buscarLoginIniciado]: (state,action) => {
-        state.login = null;
+export const reducerLogin = createReducer(estadoInicial, {
+    [buscarLoginIniciado]: (state, action) => {
+        state.login = [];
     },
     [buscarLoginSucesso]: (state, action) => {
-        state.login= action.payload;
+        state.login = action.payload;
     }
 })

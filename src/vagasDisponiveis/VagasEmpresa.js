@@ -17,12 +17,11 @@ class VagasEmpresa extends React.Component {
     }
 
     render() {
-
         let vagas = [];
-
+        
         if(this.props.login != "" && this.props.vagas != null){
-            this.props.vagas.map((busca)=> {if(busca.idEmpresa == this.props.login[0]){
-                vagas.push(<CardVagaEmpresa id={busca._id} profissao={busca.profissao} descricao={busca.descricao} salario={busca.salario} dias={busca.dias} horario={busca.horario} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} idVaga={busca._id}></CardVagaEmpresa>)
+            this.props.vagas.map((busca)=> {if(this.props.login[0] == busca.empresa){
+                vagas.push(<CardVagaEmpresa id={busca.empresa} profissao={busca.profissao} descricao={busca.descricao} salario={busca.salario} dias={busca.dias} horario={busca.horario} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} idVaga={busca.cnpj}></CardVagaEmpresa>)
             }})
         }
 
@@ -32,7 +31,7 @@ class VagasEmpresa extends React.Component {
         return (
             <div>
                 <Breadcrumb caminho={caminho}></Breadcrumb>
-                <div className="card-deck bg-light p-0 row m-0">
+                <div className="card-deck bg-light p-0 row m-0 justify-content-center">
                     {vagas}
                 </div>
             </div>

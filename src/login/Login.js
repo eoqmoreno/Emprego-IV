@@ -21,6 +21,7 @@ class Login extends React.Component {
   state = {
     email: "",
     senha: "",
+    tipo:"password"
   }
 
   modificou = (event) => {
@@ -30,17 +31,16 @@ class Login extends React.Component {
   }
 
   logar = (user) => {
-    console.log(user)
     if (this.props.empresas && this.props.candidatos) {
       this.props.empresas.map(
         (busca) => {
           if (busca.email == user.email && busca.senha == user.senha) {
-            this.props.logar(busca._id, "empresa");
+            this.props.logar(busca.email, "empresa");
           } else {
             this.props.candidatos.map(
               (busca) => {
                 if (busca.email == user.email && busca.senha == user.senha) {
-                  this.props.logar(busca._id, "candidato");
+                  this.props.logar(busca.email, "candidato");
                 }
               })
           }
@@ -58,9 +58,21 @@ class Login extends React.Component {
     this.logar(user);
   }
 
+  mostrarSenha = () => {
+    if (this.state.tipo == "password") {
+        this.setState({
+            tipo: "text",
+        })
+    } else {
+        if (this.state.tipo == "text") {
+            this.setState({
+                tipo: "password",
+            })
+        }
+    }
+}
+
   render() {
-
-
     return (
       <div className="modal fade" id="Login" role="dialog" aria-labelledby="Login" aria-hidden="true">
         <div className="modal-dialog modal-sm" role="document">
@@ -85,9 +97,12 @@ class Login extends React.Component {
                   <label htmlFor="email" className="m-0">E-mail</label>
                   <input type="email" className="form-control" onChange={this.modificou} id="email" required />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="senha" className="m-0">Senha</label>
-                  <input className="form-control" type="password" required onChange={this.modificou} id="senha"/>
+                <div className="input-group">
+                  <label className="color col-12 p-0 m-0">Senha:</label>
+                  <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required />
+                  <div className="input-group-append">
+                    <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
+                  </div>
                 </div>
                 <div className="justify-content-center d-flex">
                   <input type="submit" className="btn btn-primary" value="Entrar"></input>

@@ -18,7 +18,10 @@ import './css/root.css';
 // import redux
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import store from './store';
+import {store, persistor} from './store';
+
+// import redux-persist
+import {PersistGate} from 'redux-persist/integration/react'
 
 // import ant desing
 import 'antd/dist/antd.css';
@@ -30,7 +33,9 @@ import App from './App';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
         <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

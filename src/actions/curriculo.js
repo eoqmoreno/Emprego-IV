@@ -5,7 +5,7 @@ import axios from "axios";
 export const buscarCurriculoIniciado = createAction("BUSCAR_CURRICULO");
 export const buscarCurriculoSucesso = createAction("BUSCAR_CURRICULO_SUCESSO");
 
-const url = "http://127.0.0.1/curriculos/"
+const url = "https://emprego-bd-default-rtdb.firebaseio.com/curriculo.json"
 
 export const buscarCurriculo = () => {
     return (dispatch, getState) => {
@@ -15,7 +15,11 @@ export const buscarCurriculo = () => {
             method: "GET",
             url: url,
         }).then(response => {
-            dispatch(buscarCurriculoSucesso(response.data));
+            let result = [];
+            for (let key in response.data) {
+                result.push(response.data[key])
+            }
+            dispatch(buscarCurriculoSucesso(result));
         })
     }
 }

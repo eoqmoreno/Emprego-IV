@@ -110,7 +110,7 @@ class CadastroCurriculo extends React.Component {
             interpessoais: this.state.interpessoais,
             experiencias: this.state.experiencias,
             idiomas: this.state.idiomas,
-            idCandidato: this.props.login[0],
+            Candidato: this.props.login[0],
         }
         console.log(curriculo)
         this.props.addCurriculo(curriculo);
@@ -161,7 +161,7 @@ class CadastroCurriculo extends React.Component {
                                 <div className="form-row">
                                     <div className="col">
                                         <label className="color" htmlFor="escolaridade">Grau de escolaridade</label>
-                                        <select className="form-control" id="escolariadade" onChange={this.modificou}>
+                                        <select className="form-control" id="escolariadade" onChange={this.modificou} required>
                                             <option selected disabled hidden> Clique para selecionar </option>
                                             <option>Ensino Fundametal Incompleto</option>
                                             <option>Ensino Fundametal Completo</option>
@@ -177,11 +177,11 @@ class CadastroCurriculo extends React.Component {
                                 <div className="form-row">
                                     <div className="col">
                                         <label className="color" htmlFor="nomeInstituição">Nome da instituição</label>
-                                        <input type="text" className="form-control" id="nomeInstituicao" onChange={this.modificou} />
+                                        <input type="text" className="form-control" id="nomeInstituicao" onChange={this.modificou} required/>
                                     </div>
                                     <div className="col">
                                         <label className="color" htmlFor="anoConclusão">Ano de conclusão</label>
-                                        <input type="number" className="form-control ano" id="anoConclusao" onChange={this.modificou} />
+                                        <input type="number" className="form-control ano" id="anoConclusao" onChange={this.modificou} required/>
                                         <br></br>
 
                                     </div>
@@ -206,6 +206,7 @@ class CadastroCurriculo extends React.Component {
                                         style={{ width: '100%' }}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funTecnica}
+                                        rules={[{ required: true}]}
                                     >
                                         {habiTecnica}
                                     </Select>
@@ -219,6 +220,7 @@ class CadastroCurriculo extends React.Component {
                                         style={{ width: '100%' }}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funInterpessoais}
+                                        rules={[{ required: true}]}
                                     >
                                         {habiInterpessoais}
                                     </Select>
