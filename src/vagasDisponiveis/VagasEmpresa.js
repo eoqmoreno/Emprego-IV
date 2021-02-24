@@ -21,7 +21,7 @@ class VagasEmpresa extends React.Component {
         
         if(this.props.login != "" && this.props.vagas != null){
             this.props.vagas.map((busca)=> {if(this.props.login[0] == busca.empresa){
-                vagas.push(<CardVagaEmpresa id={busca.empresa} profissao={busca.profissao} descricao={busca.descricao} salario={busca.salario} dias={busca.dias} horario={busca.horario} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} idVaga={busca.cnpj}></CardVagaEmpresa>)
+                vagas.push(<CardVagaEmpresa foto={this.props.login[0]} id={busca.empresa} profissao={busca.profissao} descricao={busca.descricao} salario={busca.salario} dias={busca.dias} horario={busca.horario} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} idVaga={busca.id}></CardVagaEmpresa>)
             }})
         }
 

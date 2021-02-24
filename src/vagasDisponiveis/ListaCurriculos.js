@@ -17,36 +17,41 @@ class ListaCurriculos extends React.Component {
     componentDidMount = () => {
         this.props.buscarCandidato();
         this.props.buscarCurriculo();
-        this.props.buscarCandidatura()
+        // this.props.buscarCandidatura()
     }
 
     render() {
         var login = ""
-        if(this.props.login != null){
+        if (this.props.login != null) {
             login = this.props.login[0];
         }
 
         var tabela = [];
         var modais = [];
-
+        var candidatos = [];
+        var candidatoEnvio = "";
         var vaga = this.props.match.params.vaga;
 
+        if (this.props.candidatos != null) {
+            this.props.candidatos.map((busca) => { candidatos.push(busca) } )
+        }
 
         if (this.props.curriculos != null && this.props.candidatos != null && this.props.login != null) {
-            this.props.curriculos.map((curriculo, index)=>{
-                if(curriculo.idCandidato == this.props.login[0]){
-                    this.props.candidatos.map((candidato)=>{
-                        if(candidato._id == this.props.login[0]){
-                            tabela.push(<TabelaLinha chave={index} vaga={vaga} curriculo={curriculo._id}></TabelaLinha>)
-                            modais.push(<Curriculo candidato={candidato} curriculo={curriculo} key={index} chave={"modal" + index}></Curriculo>)
-                        }
-                    })
+            this.props.curriculos.map((curriculo, index) => {
+                candidatos.map((candidato)=> {
+                    if(candidato.email == curriculo.candidato){
+                        return candidatoEnvio = candidato;
+                    }
+                })
+                if (curriculo.candidato == this.props.login[0]) {
+                    tabela.push(<TabelaLinha chave={index} vaga={vaga} curriculo={curriculo.id}></TabelaLinha>)
+                    modais.push(<Curriculo curriculo={curriculo} candidato={candidatoEnvio} key={index} chave={"modal" + index}></Curriculo>)
                 }
             })
         }
 
         var caminho = [
-            { nome: "LISTA DE CURRICULOS", link: "/listacurriculos/"+vaga },
+            { nome: "LISTA DE CURRICULOS", link: "/listacurriculos/" + vaga },
         ]
 
 
@@ -54,12 +59,13 @@ class ListaCurriculos extends React.Component {
             <div>
                 <Breadcrumb caminho={caminho}></Breadcrumb>
 
-                    <table className="table table-hover border-0 text-center">
+                <table className="table table-hover border-0 text-center">
 
-                        <tbody>
-                            {tabela}
-                        </tbody>
-                    </table>
+                    <tbody>
+                        {tabela}
+                    </tbody>
+
+                </table>
                 {modais}
 
             </div >

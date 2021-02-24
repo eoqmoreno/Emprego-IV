@@ -1,11 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { updateCandidatura } from '../actions/candidatar';
+import { storage } from '../firebase/firebaseConfig';
 import foto from "../img/candidatos/1.jpg";
 
 class TabelaLinha extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            render:"",
+        }
     }
     
     submter = (event) =>{
@@ -15,14 +19,23 @@ class TabelaLinha extends React.Component {
         curriculo: this.props.curriculo,
         estado: true,
         }
-        this.props.updateCandidatura(this.props.candidatura, candidatura)
+        this.props.updateCandidatura(this.props.candidatura.id, candidatura)
+    }
+    
+    componentDidMount(){
+        var foto = storage.ref().child('candidato/'+ this.props.foto).getDownloadURL();
+        foto.then((result)=>{
+            this.setState({
+                render: result,
+            })
+        })
     }
 
     render() {
         return (
                 <tr>
                     <td className="align-middle">
-                        <img src={foto} width="10%" className="m-2 mr-4 rounded-circle" alt="foto do candidato"/>
+                        <img src={this.state.render} width="10%" className="m-2 mr-4 rounded-circle" alt="foto do candidato"/>
                         {this.props.nome}
                     </td>
                     <td className="align-middle">
@@ -31,7 +44,7 @@ class TabelaLinha extends React.Component {
                     <td className="align-middle">
                         <button type="button" className="btn m-0 p-0 azulEscuro t-underline" data-toggle="modal" data-target={"#"+this.props.chave} data-dismiss="modal"> Ver currículo</button>
                     </td>
-                    <td>
+                    <td class="align-middle">
                         <button type="button" class="btn btn-primary" onClick={this.submter}>Chamar para entrevista</button>
                     </td>
                 </tr >

@@ -2,11 +2,24 @@ import React from 'react';
 import CursoCadastrado from '../cadastroCurriculo/CursoCadastrado';
 import ExperienciaCadastrada from '../cadastroCurriculo/ExperienciaCadastrada';
 import IdiomaCadastrado from '../cadastroCurriculo/IdiomaCadastrado';
+import { storage } from '../firebase/firebaseConfig';
 import Jose from '../img/candidatos/1.jpg';
 
 export default class Curriculo extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            render:"",
+        }
+    }
+
+    componentDidMount(){
+        var foto = storage.ref().child('candidato/'+ this.props.candidato.email).getDownloadURL();
+        foto.then((result)=>{
+            this.setState({
+                render: result,
+            })
+        })
     }
 
     render() {
@@ -42,7 +55,7 @@ export default class Curriculo extends React.Component {
                             <div className="container">
                                 <div className="row m-0">
                                     <div className="col-4">
-                                        <img className="" src={Jose} alt="foto do candidato" />
+                                        <img className="" src={this.state.render} alt="foto do candidato" />
                                     </div>
 
                                     <div className="col-8">

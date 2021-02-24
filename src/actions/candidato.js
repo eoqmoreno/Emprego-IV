@@ -24,7 +24,7 @@ export const buscarCandidato = () => {
 }   
 
 export const addCandidato = (candidato, img) => {
-    storage.ref('candidato/'+ img.name).put(img);
+    storage.ref('candidato/'+ candidato.email).put(img);
     return(dispatch, getState) => {
         axios({
             method:"POST",

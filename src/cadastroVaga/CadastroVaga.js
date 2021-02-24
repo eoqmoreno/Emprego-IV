@@ -48,6 +48,7 @@ class CadastroVaga extends React.Component {
             perfil: this.state.perfil,
             qtdVagas: this.state.qtdVagas,
             empresa: this.props.login[0],
+            id: Date.now(),
         }
         console.log(vaga)
         this.props.addVaga(vaga);

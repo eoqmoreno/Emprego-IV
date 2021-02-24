@@ -6,27 +6,37 @@ import $, { event } from "jquery";
 import { connect } from 'react-redux';
 import { buscarCurriculo } from '../actions/curriculo';
 import { buscarCandidato } from '../actions/candidato';
+import { storage } from '../firebase/firebaseConfig';
 
 class CardVaga extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            render: "",
+        }
     }
 
     componentDidMount = () => {
         this.props.buscarCandidato();
-        // this.props.buscarCurriculo();
+
+        var foto = storage.ref().child('empresa/'+ this.props.empresa.email).getDownloadURL();
+        foto.then((result)=>{
+            this.setState({
+                render: result,
+            })
+        })
     }
 
     render() {
 
-        var link = "/listacurriculos/" + this.props.idVaga;
+        var link = "/listacurriculos/" + this.props.id;
 
         return (
             <div className="card line-cinza-escuro col-lg-3 col-12">
                 <div className="card-body text-center">
-                    <img src={hf} className="rounded-circle line-azulEscuro mb-2"></img>
+                    <img src={this.state.render} className="rounded-circle mb-2 w-50"></img>
                     <br></br>
-                    <span className="">{this.props.empresa}</span>
+                    <h5 className="">{this.props.empresa.nomeFantasia}</h5>
 
                     <hr></hr>
                     <h5 className="card-title bold azulEscuro mb-0">{this.props.profissao}</h5>
@@ -54,9 +64,9 @@ class CardVaga extends React.Component {
                             </div>
                             <div className="modal-body">
                                 <div className="text-center">
-                                    <img className="rounded-circle line-azulEscuro mb-2" src={hf} alt=""></img>
+                                    <img className="rounded-circle mb-2 w-25" src={this.state.render} alt=""></img>
                                     <br></br>
-                                    <span className="">{this.props.empresa}</span>
+                                    <h5 className="">{this.props.empresa.nomeFantasia}</h5>
                                 </div>
                                 <hr></hr>
                                 <div className="">
@@ -82,7 +92,6 @@ class CardVaga extends React.Component {
 
 const mapearEstadoParaProps = (state, props) => {
     return {
-        // curriculos: state.curriculo.curriculos,
         candidatos: state.candidato.candidatos,
         login: state.login.login,
     }
@@ -90,9 +99,9 @@ const mapearEstadoParaProps = (state, props) => {
 
 const mapearDispatchParaProps = (dispatch) => {
     return {
-        // buscarCurriculo: () => {
-        //     dispatch(buscarCurriculo());
-        // },
+        buscarCurriculo: () => {
+            dispatch(buscarCurriculo());
+        },
 
         buscarCandidato: () => {
             dispatch(buscarCandidato());

@@ -29,26 +29,54 @@ class VagasDisponiveis extends React.Component {
         let vagas = [];
         let empresas = [];
         let curriculos = [];
-        let candidato= "";
+        let candidato = "";
+        let empresaEnvio = "";
 
+        var categoria = this.props.match.params.categoria;
+        
         if (this.props.empresas != null) {
-            empresas = this.props.empresas
+            this.props.empresas.map((empresa) => { empresas.push(empresa) } )
         }
         
-        var categoria = this.props.match.params.categoria;
-
-        
         if (categoria != null) {
-            if (this.props.vagas) {
+            if (this.props.vagas != null) {
                 vagas = this.props.vagas.map(
                     function (busca, index) {
+
+                        empresas.map((empresa)=> {
+                            if(empresa.email == busca.empresa){
+                                return empresaEnvio = empresa;
+                            }
+                        })
                         if (busca.categoria == categoria) {
-                            var a = empresas.map((a) => { if (a.cnpj == busca.idEmpresa) { return a.nomeFantasia } })
-                            return <CardVaga key={index} chave={index} profissao={busca.profissao} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
+                            return <CardVaga
+                                key={index}
+                                chave={index}
+                                profissao={busca.profissao}
+                                habTecnica={busca.habTecnica}
+                                habInterpessoais={busca.habInterpessoais}
+                                descricao={busca.categoria}
+                                salario={busca.salario}
+                                dias={busca.dias}
+                                horario={busca.horario}
+                                empresa= {empresaEnvio}
+                                qtdVagas={busca.qtdVagas}
+                                id={busca.id}></CardVaga>
                         }
                         if (busca.profissao == categoria) {
-                            var a = empresas.map((a) => { if (a.cnpj == busca.idEmpresa) { return a.nomeFantasia } });
-                            return <CardVaga chave={index} key={index} profissao={busca.profissao} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} descricao={busca.categoria} salario={busca.salario} dias={busca.dias} horario={busca.horario} empresa={a} idVaga={busca._id} qtdVagas={busca.qtdVagas}></CardVaga>
+                            return <CardVaga
+                                chave={index}
+                                key={index}
+                                profissao={busca.profissao}
+                                habTecnica={busca.habTecnica}
+                                habInterpessoais={busca.habInterpessoais}
+                                descricao={busca.categoria}
+                                salario={busca.salario}
+                                dias={busca.dias}
+                                horario={busca.horario}
+                                empresa={empresaEnvio}
+                                qtdVagas={busca.qtdVagas}
+                                id={busca.id}></CardVaga>
                         }
                     }
                 )

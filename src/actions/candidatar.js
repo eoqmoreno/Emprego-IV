@@ -4,7 +4,7 @@ import $ from "jquery";
 export const buscarCandidaturaIniciado = createAction("BUSCAR_OFERTA");
 export const buscarCandidaturaSucesso = createAction("BUSCAR_OFERTA_SUCESSO");
 
-const url = "http://127.0.0.1/candidaturas/"
+const url = "https://emprego-bd-default-rtdb.firebaseio.com/candidatura.json"
 
 export const buscarCandidatura = () => {
     return (dispatch, getState) => {
@@ -14,7 +14,11 @@ export const buscarCandidatura = () => {
             method: "GET",
             url: url,
         }).then(response => {
-            dispatch(buscarCandidaturaSucesso(response.data));
+            let result = [];
+            for (let key in response.data) {
+                result.push(response.data[key])
+            }
+            dispatch(buscarCandidaturaSucesso(result));
         })
     }
 }
@@ -35,10 +39,23 @@ export const addCandidatura = (candidatura) => {
 }
 
 export const updateCandidatura = (id, candidatura) => {
+    let chave = "";
+    axios({
+        method: "GET",
+        url: url,
+    }).then(response => {
+        let result = [];
+        let ids = [];
+        for (let key in response.data) {
+            if(response.data[key].id == id){
+                chave = key;
+            }
+        }
+    })
     return (dispatch, getState) => {
         axios({
             method: "PUT",
-            url: url + id,
+            url: url + chave,
             data: candidatura,
         }).then(response => {
             dispatch(buscarCandidatura());

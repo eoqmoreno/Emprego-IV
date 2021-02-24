@@ -1,11 +1,25 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { storage } from '../firebase/firebaseConfig';
 import Image24 from '../img/empresa/hf.png';
 
 export class CardVagaEmpresa extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            render:"",
+        }
     }
+
+    componentDidMount(){
+        var foto = storage.ref().child('empresa/'+ this.props.foto).getDownloadURL();
+        foto.then((result)=>{
+            this.setState({
+                render: result,
+            })
+        })
+    }
+
     render() {
         let link = "/listadecandidatos/" + this.props.idVaga;
         return (
@@ -13,7 +27,7 @@ export class CardVagaEmpresa extends React.Component {
                 <div className="line-cinza-escuro row">
                     
                     <div className="col-12 col-lg-4 justify-content-center text-center align-self-center pt-lg-0 pt-5">
-                        <img src={Image24} className="rounded-circle line-azulEscuro" alt="Responsive image" />
+                        <img src={this.state.render} className="rounded-circle w-50" alt="Responsive image" />
                     </div>
 
                     <div className="p-5 col-12 col-lg-8 text-right justify-content-center align-self-center separatorVerticalLeft">

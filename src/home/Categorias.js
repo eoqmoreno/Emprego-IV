@@ -40,7 +40,7 @@ export class Categorias extends Component {
                     <span className="bold azulEscuro">Tecnologia</span>
                 </Link>
 
-                <Link className="col-2 d-none d-lg-block text-center" to="/vagasdisponiveis/Transportes">
+                <Link className="col-2 d-none d-lg-block text-center" to="/vagasdisponiveis/Transporte">
                     <img src={transporte} className="w-25 m-3" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Transportes</span>

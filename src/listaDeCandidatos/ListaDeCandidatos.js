@@ -33,10 +33,10 @@ class ListaDeCandidatos extends React.Component {
                 if (candidatura.vaga == vaga) {
                     this.props.curriculos.map(
                         (curriculo, index) => {
-                            if (curriculo._id == candidatura.curriculo) {
+                            if (curriculo.id == candidatura.curriculo) {
                                 this.props.candidatos.map((candidato) => {
-                                    if (candidato._id == curriculo.idCandidato) {
-                                        candidatos.push(<TabelaLinha nome={candidato.nome} foto={candidato.foto} id={candidato._id} habilidades={curriculo.tecnologia.join(" | ")} key={index} chave={"modal" + index} candidatura={candidatura._id} vaga={vaga} curriculo={curriculo._id}></TabelaLinha>)
+                                    if (candidato.email == curriculo.candidato) {
+                                        candidatos.push(<TabelaLinha nome={candidato.nome} foto={candidato.email} habilidades={curriculo.tecnologia.join(" | ")} key={index} chave={"modal" + index} vaga={vaga} curriculo={curriculo.id} candidatura={candidatura}></TabelaLinha>)
                                         modais.push(<Curriculo candidato={candidato} curriculo={curriculo} key={index} chave={"modal" + index}></Curriculo>)
                                     }
                                 })
