@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Emprego-IV/static/css/main.d7db581b.chunk.css",
-    "main.js": "/Emprego-IV/static/js/main.c49c695c.chunk.js",
-    "main.js.map": "/Emprego-IV/static/js/main.c49c695c.chunk.js.map",
+    "main.css": "/Emprego-IV/static/css/main.606a9afa.chunk.css",
+    "main.js": "/Emprego-IV/static/js/main.487a6fb3.chunk.js",
+    "main.js.map": "/Emprego-IV/static/js/main.487a6fb3.chunk.js.map",
     "runtime-main.js": "/Emprego-IV/static/js/runtime-main.538ec09f.js",
     "runtime-main.js.map": "/Emprego-IV/static/js/runtime-main.538ec09f.js.map",
-    "static/css/2.1f031f8c.chunk.css": "/Emprego-IV/static/css/2.1f031f8c.chunk.css",
-    "static/js/2.1a07e4fc.chunk.js": "/Emprego-IV/static/js/2.1a07e4fc.chunk.js",
-    "static/js/2.1a07e4fc.chunk.js.map": "/Emprego-IV/static/js/2.1a07e4fc.chunk.js.map",
+    "static/css/2.815e8445.chunk.css": "/Emprego-IV/static/css/2.815e8445.chunk.css",
+    "static/js/2.01281d34.chunk.js": "/Emprego-IV/static/js/2.01281d34.chunk.js",
+    "static/js/2.01281d34.chunk.js.map": "/Emprego-IV/static/js/2.01281d34.chunk.js.map",
     "index.html": "/Emprego-IV/index.html",
-    "precache-manifest.fad9ce85d2f38ebbbe4effccd241e672.js": "/Emprego-IV/precache-manifest.fad9ce85d2f38ebbbe4effccd241e672.js",
+    "precache-manifest.14c79bc468be1bc3e46db72b5cc13eda.js": "/Emprego-IV/precache-manifest.14c79bc468be1bc3e46db72b5cc13eda.js",
     "service-worker.js": "/Emprego-IV/service-worker.js",
-    "static/css/2.1f031f8c.chunk.css.map": "/Emprego-IV/static/css/2.1f031f8c.chunk.css.map",
-    "static/css/main.d7db581b.chunk.css.map": "/Emprego-IV/static/css/main.d7db581b.chunk.css.map",
-    "static/js/2.1a07e4fc.chunk.js.LICENSE.txt": "/Emprego-IV/static/js/2.1a07e4fc.chunk.js.LICENSE.txt",
+    "static/css/2.815e8445.chunk.css.map": "/Emprego-IV/static/css/2.815e8445.chunk.css.map",
+    "static/css/main.606a9afa.chunk.css.map": "/Emprego-IV/static/css/main.606a9afa.chunk.css.map",
+    "static/js/2.01281d34.chunk.js.LICENSE.txt": "/Emprego-IV/static/js/2.01281d34.chunk.js.LICENSE.txt",
     "static/media/root.css": "/Emprego-IV/static/media/ProximaNova-Regular.410504d4.otf",
     "static/media/candidato.png": "/Emprego-IV/static/media/candidato.bcdf934c.png",
     "static/media/conexão.png": "/Emprego-IV/static/media/conexão.27d0be61.png",
@@ -21,16 +21,15 @@
     "static/media/educação.png": "/Emprego-IV/static/media/educação.c4895271.png",
     "static/media/empresa.png": "/Emprego-IV/static/media/empresa.2ccd1b81.png",
     "static/media/fluidez.png": "/Emprego-IV/static/media/fluidez.347f90a2.png",
-    "static/media/hf.png": "/Emprego-IV/static/media/hf.9b02ad6d.png",
     "static/media/slids1.png": "/Emprego-IV/static/media/slids1.97974288.png",
     "static/media/slids2.png": "/Emprego-IV/static/media/slids2.e56b098f.png",
     "static/media/slids3.png": "/Emprego-IV/static/media/slids3.f2d854c2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.538ec09f.js",
-    "static/css/2.1f031f8c.chunk.css",
-    "static/js/2.1a07e4fc.chunk.js",
-    "static/css/main.d7db581b.chunk.css",
-    "static/js/main.c49c695c.chunk.js"
+    "static/css/2.815e8445.chunk.css",
+    "static/js/2.01281d34.chunk.js",
+    "static/css/main.606a9afa.chunk.css",
+    "static/js/main.487a6fb3.chunk.js"
   ]
 }
