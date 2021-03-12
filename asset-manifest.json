@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Emprego-IV/static/css/main.606a9afa.chunk.css",
-    "main.js": "/Emprego-IV/static/js/main.487a6fb3.chunk.js",
-    "main.js.map": "/Emprego-IV/static/js/main.487a6fb3.chunk.js.map",
+    "main.css": "/Emprego-IV/static/css/main.d08b38da.chunk.css",
+    "main.js": "/Emprego-IV/static/js/main.b1e1786e.chunk.js",
+    "main.js.map": "/Emprego-IV/static/js/main.b1e1786e.chunk.js.map",
     "runtime-main.js": "/Emprego-IV/static/js/runtime-main.538ec09f.js",
     "runtime-main.js.map": "/Emprego-IV/static/js/runtime-main.538ec09f.js.map",
     "static/css/2.815e8445.chunk.css": "/Emprego-IV/static/css/2.815e8445.chunk.css",
-    "static/js/2.01281d34.chunk.js": "/Emprego-IV/static/js/2.01281d34.chunk.js",
-    "static/js/2.01281d34.chunk.js.map": "/Emprego-IV/static/js/2.01281d34.chunk.js.map",
+    "static/js/2.dc0ddf31.chunk.js": "/Emprego-IV/static/js/2.dc0ddf31.chunk.js",
+    "static/js/2.dc0ddf31.chunk.js.map": "/Emprego-IV/static/js/2.dc0ddf31.chunk.js.map",
     "index.html": "/Emprego-IV/index.html",
-    "precache-manifest.14c79bc468be1bc3e46db72b5cc13eda.js": "/Emprego-IV/precache-manifest.14c79bc468be1bc3e46db72b5cc13eda.js",
+    "precache-manifest.1b0e9baeb49de831060b29ac6bf39225.js": "/Emprego-IV/precache-manifest.1b0e9baeb49de831060b29ac6bf39225.js",
     "service-worker.js": "/Emprego-IV/service-worker.js",
     "static/css/2.815e8445.chunk.css.map": "/Emprego-IV/static/css/2.815e8445.chunk.css.map",
-    "static/css/main.606a9afa.chunk.css.map": "/Emprego-IV/static/css/main.606a9afa.chunk.css.map",
-    "static/js/2.01281d34.chunk.js.LICENSE.txt": "/Emprego-IV/static/js/2.01281d34.chunk.js.LICENSE.txt",
+    "static/css/main.d08b38da.chunk.css.map": "/Emprego-IV/static/css/main.d08b38da.chunk.css.map",
+    "static/js/2.dc0ddf31.chunk.js.LICENSE.txt": "/Emprego-IV/static/js/2.dc0ddf31.chunk.js.LICENSE.txt",
     "static/media/root.css": "/Emprego-IV/static/media/ProximaNova-Regular.410504d4.otf",
     "static/media/candidato.png": "/Emprego-IV/static/media/candidato.bcdf934c.png",
     "static/media/conexão.png": "/Emprego-IV/static/media/conexão.27d0be61.png",
@@ -28,8 +28,8 @@
   "entrypoints": [
     "static/js/runtime-main.538ec09f.js",
     "static/css/2.815e8445.chunk.css",
-    "static/js/2.01281d34.chunk.js",
-    "static/css/main.606a9afa.chunk.css",
-    "static/js/main.487a6fb3.chunk.js"
+    "static/js/2.dc0ddf31.chunk.js",
+    "static/css/main.d08b38da.chunk.css",
+    "static/js/main.b1e1786e.chunk.js"
   ]
 }
