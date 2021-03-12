@@ -9,9 +9,6 @@ import TabelaLinha from './TabelaLinha';
 
 
 class ListaDeCandidatos extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
 
     componentDidMount = () => {
@@ -54,8 +51,8 @@ class ListaDeCandidatos extends React.Component {
 
 
         return (
-            <div>
-                <Breadcrumb caminho={caminho}></Breadcrumb>
+            <div className="m-5 p-0">
+                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
 
                     <table className="table table-hover border-0">
                         <thead>

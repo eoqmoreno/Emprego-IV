@@ -6,18 +6,16 @@ import { buscarProfissao } from '../actions/profissao';
 import Breadcrumb from '../commun/Breadcrumb';
 import CursosRepeate from './CursosRepeate';
 
-import { Select } from 'antd';
+import { Col, Select } from 'antd';
 import ExperienciasRepeate from './ExperienciasRepeate';
 import CursoCadastrado from './CursoCadastrado';
 import ExperienciaCadastrada from './ExperienciaCadastrada';
 import IdiomasRepeate from './IdiomasRepeate';
 import IdiomaCadastrado from './IdiomaCadastrado';
 import { addCurriculo } from '../actions/curriculo';
+import { Link } from 'react-router-dom';
 
 class CadastroCurriculo extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     state = {
         escolariadade: "",
@@ -49,12 +47,38 @@ class CadastroCurriculo extends React.Component {
             cursos: a,
         })
     }
+    somaCursos = () => {
+        var qtd = <CursosRepeate fun={this.receberDados} add={this.somaCursos}></CursosRepeate>
+        this.setState({
+            qtdCurso: qtd,
+        })
+    }
+    removerCurso = (id) => {
+        let cursos = this.state.cursos
+        cursos.splice(id, 1)
+        this.setState({
+            cursos: cursos
+        })
+    }
 
     receberDadosExperiencias = (expereiencia) => {
         let a = this.state.experiencias;
         a.push(expereiencia);
         this.setState({
             experiencias: a,
+        })
+    }
+    somaExperiencia = () => {
+        var qtd = <ExperienciasRepeate fun={this.receberDadosExperiencias} add={this.somaExperiencia}></ExperienciasRepeate>;
+        this.setState({
+            qtdExperiencias: qtd,
+        })
+    }
+    removerExperiencia = (id) => {
+        let experiencias = this.state.experiencias
+        experiencias.splice(id, 1)
+        this.setState({
+            experiencias: experiencias
         })
     }
 
@@ -65,25 +89,17 @@ class CadastroCurriculo extends React.Component {
             idioma: a,
         })
     }
-
-    somaCursos = () => {
-        var qtd = <CursosRepeate fun={this.receberDados} add={this.somaCursos}></CursosRepeate>
-        this.setState({
-            qtdCurso: qtd,
-        })
-    }
-
-    somaExperiencia = () => {
-        var qtd = <ExperienciasRepeate fun={this.receberDadosExperiencias} add={this.somaExperiencia}></ExperienciasRepeate>;
-        this.setState({
-            qtdExperiencias: qtd,
-        })
-    }
-
     somaIdiomas = () => {
         var qtd = <IdiomasRepeate fun={this.receberDadosIdiomas} add={this.somaIdiomas}></IdiomasRepeate>;
         this.setState({
             qtdIdiomas: qtd,
+        })
+    }
+    removerIdioma = (id) => {
+        let idiomas = this.state.idiomas
+        idiomas.splice(id, 1)
+        this.setState({
+            idiomas: idiomas
         })
     }
 
@@ -114,7 +130,7 @@ class CadastroCurriculo extends React.Component {
             id: Date.now(),
         }
         console.log(curriculo)
-        this.props.addCurriculo(curriculo);
+        // this.props.addCurriculo(curriculo);
     }
 
     modificou = (event) => {
@@ -151,8 +167,8 @@ class CadastroCurriculo extends React.Component {
 
         return (
 
-            <div>
-                <Breadcrumb caminho={caminho}></Breadcrumb>
+            <div className="m-5">
+                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
                 <div className="container bg-white p-0">
                     <div className="row">
                         <div className="col-lg-6 col-12">
@@ -178,11 +194,11 @@ class CadastroCurriculo extends React.Component {
                                 <div className="form-row">
                                     <div className="col">
                                         <label className="color" htmlFor="nomeInstituição">Nome da instituição</label>
-                                        <input type="text" className="form-control" id="nomeInstituicao" onChange={this.modificou} required/>
+                                        <input type="text" className="form-control" id="nomeInstituicao" onChange={this.modificou} required />
                                     </div>
                                     <div className="col">
                                         <label className="color" htmlFor="anoConclusão">Ano de conclusão</label>
-                                        <input type="number" className="form-control ano" id="anoConclusao" onChange={this.modificou} required/>
+                                        <input type="number" size="4" className="form-control ano" id="anoConclusao" onChange={this.modificou} required />
                                         <br></br>
 
                                     </div>
@@ -191,7 +207,7 @@ class CadastroCurriculo extends React.Component {
                                 <hr></hr>
 
                                 {this.state.cursos.map((busca, index) => (
-                                    <CursoCadastrado key={index} formacao={busca.formacao} instituição={busca.instituição} nomeCurso={busca.nomeCurso} anoConclusão={busca.anoConclusão}></CursoCadastrado>
+                                    <CursoCadastrado key={index} id={index} removerCurso={this.removerCurso} formacao={busca.formacao} instituição={busca.instituição} nomeCurso={busca.nomeCurso} anoConclusão={busca.anoConclusão}></CursoCadastrado>
                                 ))}
                                 {this.state.qtdCurso}
 
@@ -207,7 +223,8 @@ class CadastroCurriculo extends React.Component {
                                         style={{ width: '100%' }}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funTecnica}
-                                        rules={[{ required: true}]}
+                                        rules={[{ required: true }]}
+                                        notFoundContent="Nada por aqui!"
                                     >
                                         {habiTecnica}
                                     </Select>
@@ -221,7 +238,8 @@ class CadastroCurriculo extends React.Component {
                                         style={{ width: '100%' }}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funInterpessoais}
-                                        rules={[{ required: true}]}
+                                        rules={[{ required: true }]}
+                                        notFoundContent="Nada por aqui!"
                                     >
                                         {habiInterpessoais}
                                     </Select>
@@ -232,7 +250,7 @@ class CadastroCurriculo extends React.Component {
                                 <hr></hr>
 
                                 {this.state.experiencias.map((busca, index) => (
-                                    <ExperienciaCadastrada key={index} empresaTrabalhou={busca.empresaTrabalhou} cargoOcupado={busca.cargoOcupado} periodo={busca.periodo} descriçãoAtividades={busca.descriçãoAtividades}></ExperienciaCadastrada>
+                                    <ExperienciaCadastrada key={index} id={index} removerExperiencia={this.removerExperiencia} empresaTrabalhou={busca.empresaTrabalhou} cargoOcupado={busca.cargoOcupado} periodo={busca.periodo} descriçãoAtividades={busca.descriçãoAtividades}></ExperienciaCadastrada>
                                 ))}
                                 {this.state.qtdExperiencias}
 
@@ -241,11 +259,14 @@ class CadastroCurriculo extends React.Component {
                                 <h5 className="color font-weight-bold"> Idiomas </h5>
                                 <hr></hr>
                                 {this.state.idiomas.map((busca, index) => (
-                                    <IdiomaCadastrado key={index} idioma={busca.idioma} nivelIdionma={busca.nivelIdionma}></IdiomaCadastrado>
+                                    <IdiomaCadastrado key={index} id={index} idioma={busca.idioma} nivelIdionma={busca.nivelIdionma} removerIdioma={this.removerIdioma}></IdiomaCadastrado>
                                 ))}
                                 {this.state.qtdIdiomas}
                                 <br></br><br></br>
-                                <input type="submit" className="btn btn-primary float-right mr-0" value="Salvar currículo"></input>
+                                <div className="col p-0 mt-1 text-right">
+                                    <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
+                                    <button type="submit" className="btn btn-primary ml-2 m-0">Salvar currículo</button>
+                                </div>
                             </form>
 
                         </div>
@@ -282,7 +303,7 @@ const mapearDispatchParaProps = (dispatch) => {
             dispatch(buscarHabilidade())
         },
 
-        addCurriculo: (curriculo) =>{
+        addCurriculo: (curriculo) => {
             dispatch(addCurriculo(curriculo))
         }
     }

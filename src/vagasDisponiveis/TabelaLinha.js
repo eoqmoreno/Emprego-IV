@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { addCandidatura } from '../actions/candidatar';
 
-class TabelaLinha extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+class TabelaLinha extends Component {
     submeter = (event) => {
         event.preventDefault();
         let candidatura = {
@@ -19,13 +16,13 @@ class TabelaLinha extends React.Component {
     render() {
         return (
             <tr key={this.props.chave}>
-                <td class="align-middle">Curriculo {this.props.chave + 1}</td>
+                <td className="align-middle">Curriculo {this.props.chave + 1}</td>
 
-                <td class="align-middle">
+                <td className="align-middle">
                     <button className="btn btn-outline-primary" data-toggle="modal" data-target={"#modal" + this.props.chave} data-dismiss="modal">Ver currículo</button>
                 </td>
 
-                <td class="align-middle">
+                <td className="align-middle">
                     <button className="btn btn-primary" onClick={this.submeter}>Enviar currículo</button>
                 </td>
             </tr>

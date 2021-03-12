@@ -3,7 +3,6 @@ import CursoCadastrado from '../cadastroCurriculo/CursoCadastrado';
 import ExperienciaCadastrada from '../cadastroCurriculo/ExperienciaCadastrada';
 import IdiomaCadastrado from '../cadastroCurriculo/IdiomaCadastrado';
 import { storage } from '../firebase/firebaseConfig';
-import Jose from '../img/candidatos/1.jpg';
 
 export default class Curriculo extends React.Component {
     constructor(props) {
@@ -42,8 +41,8 @@ export default class Curriculo extends React.Component {
         }
 
         return (
-            <div key={this.props.index}>
-                <div className="modal fade" id={this.props.chave} tabindex="-1" role="dialog" aria-labelledby={this.props.chave} aria-hidden="true">
+            <div>
+                <div className="modal fade" id={this.props.chave} tabIndex="-1" role="dialog" aria-labelledby={this.props.chave} aria-hidden="true">
                     <div className="modal-dialog modal-md">
                         <div className="modal-content">
                             {/* Titulo do modal */}

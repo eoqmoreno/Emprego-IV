@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
 
-export class IdiomasRepeate extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+export class IdiomasRepeate extends Component {
 
     state = {
         idioma: "",
@@ -35,7 +32,7 @@ export class IdiomasRepeate extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="idioma">
                 <div className="form-row">
                     <div className="col">
                         <label className="color" htmlFor="idioma">Idioma</label>
@@ -66,12 +63,12 @@ export class IdiomasRepeate extends React.Component {
 
                 </div>
                 <div className="custom-control custom-checkbox">
-                    <input type="checkbox" className="custom-control-input" id="temIdioma" onChange={this.modificou}/>
+                    <input type="checkbox" className="custom-control-input" id="temIdioma" value="true" onChange={()=>{$(".idioma :input").attr("disabled", true)}}/>
                     <br></br>
                     <label className="custom-control-label color" htmlFor="temIdioma">NÃO POSSUO CURSOS </label>
                 </div>
                 <hr></hr>
-                    <button type="button" className="btn btn-outline-primary float-right" id="addE" onClick={this.enviar}> <strong>Salvar</strong></button>
+                    <button type="button" className="btn btn-outline-primary float-right" onClick={this.enviar}> <strong>Salvar</strong></button>
             </div>
         )
     }

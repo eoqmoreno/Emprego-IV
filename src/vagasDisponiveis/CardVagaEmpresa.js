@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { storage } from '../firebase/firebaseConfig';
-import Image24 from '../img/empresa/hf.png';
 
-export class CardVagaEmpresa extends React.Component {
+export class CardVagaEmpresa extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -23,7 +22,7 @@ export class CardVagaEmpresa extends React.Component {
     render() {
         let link = "/listadecandidatos/" + this.props.idVaga;
         return (
-            <div className="col-10">
+            <div className="col-12">
                 <div className="line-cinza-escuro row">
                     
                     <div className="col-12 col-lg-4 justify-content-center text-center align-self-center pt-lg-0 pt-5">

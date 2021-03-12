@@ -5,18 +5,14 @@ import Card1 from '../img/icones/confiança.png';
 import Card2 from '../img/icones/conexão.png';
 import Card3 from '../img/icones/fluidez.png';
 
-// import icons
-import { FiChevronLeft } from "react-icons/fi";
-import { FiChevronRight } from "react-icons/fi";
-
 export class Somos extends Component {
     render() {
         return (
             <div className="row m-0 pt-5 pb-5 bg-cinza-escuro d-flex justify-content-around">
 
-                <h3 className="bold azulEscuro col-12 text-center pb-3 d-none d-lg-block">NÓS SOMOS</h3>
+                <h3 className="bold azulEscuro col-12 text-center pb-3 d-none d-lg-block">NOSSOS VALORES</h3>
 
-                <h5 className="bold azulEscuro col-12 text-center pb-3 d-lg-none d-block">NÓS SOMOS</h5>
+                <h5 className="bold azulEscuro col-12 text-center pb-3 d-lg-none d-block">NOSSOS VALORES</h5>
 
                 <div className="col-lg-2 d-lg-block d-none bg-branco rounded text-center pt-5 pb-5">
                     <a data-toggle="collapse" href=".multi-collapse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">

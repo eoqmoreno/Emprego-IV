@@ -10,6 +10,7 @@ import { AutoComplete } from 'antd';
 import NavbarEmp from './NavbarEmp';
 import NavbarCan from './NavbarCan';
 import { deslogar } from '../actions/login';
+import $ from 'jquery';
 
 
 function navbarDefault() {
@@ -61,7 +62,7 @@ class Navbar extends React.Component {
             var values = "vagasdisponiveis/" + value;
             this.setState({
                 link: values,
-            })
+            })   
         }
 
         let render = "";
@@ -91,7 +92,7 @@ class Navbar extends React.Component {
 
                         {render}
 
-                        <div className="col-12 col-lg-3 d-flex align-items-center bg-branco rounded py-0 my-0" id="pesquisa">
+                        <div className="col-12 col-lg-3 d-flex align-items-center bg-branco rounded py-0 mx-0 my-2" id="pesquisa">
                             <AutoComplete
                                 className="col-11 m-0 p-0"
                                 options={options}
@@ -101,7 +102,7 @@ class Navbar extends React.Component {
                                     option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                                 }
                             />
-                            <Link to={this.state.link} className="col-1 bg-branco m-0 p-0 "><FiSearch></FiSearch></Link>
+                            <Link to={this.state.link} className="col-1 bg-branco m-0 p-0"><FiSearch></FiSearch></Link>
                         </div>
                     </div>
                 </nav>

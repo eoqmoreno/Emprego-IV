@@ -18,10 +18,10 @@ import './css/root.css';
 // import redux
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import {store, persistor} from './store';
+import { store, persistor } from './store';
 
 // import redux-persist
-import {PersistGate} from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react'
 
 // import ant desing
 import 'antd/dist/antd.css';
@@ -29,6 +29,14 @@ import 'antd/dist/antd.css';
 // import react components
 import App from './App';
 
+
+// loading
+// window.onload = function () {
+//   $('#loading').modal()
+//   setTimeout(function () {
+//     $('#loading').modal("hide")
+//   }, 2000)
+// }
 
 ReactDOM.render(
   <React.StrictMode>
@@ -40,10 +48,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-$(document).ready(function () {
-  $(".telefone").mask('(99) 9 9999-9999');
-  $(".cnpj").mask("99.999.999/9999-99");
-});
 
 serviceWorker.unregister();

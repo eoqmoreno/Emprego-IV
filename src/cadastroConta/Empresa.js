@@ -5,6 +5,7 @@ import Breadcrumb from '../commun/Breadcrumb';
 import Perfil from '../img/Group 25.png'
 import { FiEye } from "react-icons/fi";
 import { addEmpresa } from '../actions/empresa';
+import $ from 'jquery';
 
 class Empresa extends React.Component {
     constructor(props) {
@@ -74,26 +75,29 @@ class Empresa extends React.Component {
     }
 
     render() {
+        $(".cnpj").mask("99.999.999/9999-99");
+        $(".telefone").mask('(99) 9 9999-9999');
+
+
         var caminho = [
             { nome: "CADASTRAR CANDIDATO", link: "/cadastroCandidato" }
         ]
         return (
 
             <div>
-                <Breadcrumb caminho={caminho}></Breadcrumb>
-                <div className="container bg-white p-0">
+                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
+                <div className="container bg-white p-0 m-5">
                     <div className="row m-0 p-0">
-
-                        <div className="form-group col-lg-6 col-12 text-center d-block d-lg-none">
-                            <label htmlFor="photoFile">
-                                <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
-                                <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
-                            </label>
-                            <input type="file" className="form-control-file d-none" id="photoFile" accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} />
-                        </div>
 
                         <div className="col-lg-6 col-12">
                             <form onSubmit={this.enviar}>
+                                <div className="form-group text-center">
+                                    <label htmlFor="photoFile">
+                                        <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
+                                        <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
+                                    </label>
+                                    <input type="file" className="file" id="photoFile" required accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} />
+                                </div>
 
                                 <div className="form-group">
                                     <label className="color" htmlFor="nome">Nome jurídico da empresa:</label>
@@ -117,7 +121,7 @@ class Empresa extends React.Component {
 
                                 <div className="form-group">
                                     <label className="color">Telefone:</label>
-                                    <input type="tel" id="telefone" onChange={this.modificou} placeholder="(00) 0 0000-0000" className="form-group telefone w-100" required></input>
+                                    <input type="tel" id="telefone" onChange={this.modificou} placeholder="(00) 0 0000-0000" className="form-control telefone w-100" required></input>
                                 </div>
 
                                 <div className="form-group">
@@ -139,19 +143,13 @@ class Empresa extends React.Component {
                                     <small className="col-12 m-0 p-0 azulEscuro text-right">Deve ter de 8 a 20 caracteres</small>
                                 </div>
 
+                                <br></br>
+
                                 <div className="col p-0 text-right">
-                                    <button type="submit" className="btn btn-primary m-0">Salvar currículo</button>
-                                    <Link to="/" className="btn btn-outline-danger ml-2 m-0">Cancelar</Link>
+                                    <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
+                                    <button type="submit" className="btn btn-primary ml-2 m-0">Cadastrar</button>
                                 </div>
                             </form>
-                        </div>
-
-                        <div className="form-group col-6 text-center d-none d-lg-block">
-                            <label htmlFor="photoFile">
-                                <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
-                                <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
-                            </label>
-                            <input type="file" className="form-control-file d-none" id="photoFile" accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} />
                         </div>
 
                     </div>

@@ -2,9 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export class Breadcrumb extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         let caminho = [];

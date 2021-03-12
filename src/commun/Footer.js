@@ -5,9 +5,6 @@ import { buscarCategoria } from '../actions/categoria';
 
 
 class Footer extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     componentDidMount = () => {
         this.props.buscarCategoria();
@@ -19,7 +16,7 @@ class Footer extends React.Component {
         if(this.props.categorias != null){
             categoria = this.props.categorias.map(
                 (busca, index) => (
-                    <Link className="btn col-3 btn-outline-primary m-1 bg-branco bold" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
+                    <Link className="btn col-2 mx-1 my-2 btn-outline-primary bg-branco bold" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
                 )
              )
         }
@@ -40,7 +37,7 @@ class Footer extends React.Component {
                         <br/>
                         <Link className="azulEscuro" to="/">Políticas da Empregó</Link>
                 </div>
-                <div className="col-9 d-none d-lg-block text-center p-5">
+                <div className="col-9 d-none d-lg-flex p-5 justify-content-between flex-wrap align-content-start ">
                     {categoria}
                 </div>
                 <div className="col-12 text-center bold azulEscuro">© 2021 EMPREGÔ</div>   

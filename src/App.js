@@ -19,9 +19,6 @@ import Candidato from './cadastroConta/Candidato';
 import Empresa from './cadastroConta/Empresa';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

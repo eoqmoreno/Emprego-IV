@@ -23,7 +23,7 @@ export default class TelaCandidato extends React.Component {
                             <p className="">Agora é só aguardar.</p>
                         </div>
                         <div className=" col-12 col-lg-6 justify-content-center align-self-center text-center">
-                            <img src={Image23} className="w-50" alt="Responsive image" />
+                            <img src={Image23} className="w-50" alt="Ra" />
                         </div>
                         <div className="col-1 d-none d-lg-block"></div>
                     </div>

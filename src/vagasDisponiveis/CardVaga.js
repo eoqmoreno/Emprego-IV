@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import icone_salario from "../img/icone_salario.png";
-import hf from "../img/empresa/hf.png"
-import $, { event } from "jquery";
 import { connect } from 'react-redux';
 import { buscarCurriculo } from '../actions/curriculo';
 import { buscarCandidato } from '../actions/candidato';
@@ -21,6 +19,7 @@ class CardVaga extends React.Component {
 
         var foto = storage.ref().child('empresa/'+ this.props.empresa.email).getDownloadURL();
         foto.then((result)=>{
+            console.log(result)
             this.setState({
                 render: result,
             })
@@ -55,7 +54,7 @@ class CardVaga extends React.Component {
                 </div>
 
                 <div className="modal fade" tabIndex="-1" id={"modal" + this.props.chave} role="dialog" aria-hidden="true">
-                    <div className="modal-dialog">
+                    <div className="modal-dialog modal-sm">
                         <div className="modal-content">
                             <div className="modal-header border-0">
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">

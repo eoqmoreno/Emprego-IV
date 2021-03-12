@@ -1,17 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { buscarCandidato } from '../actions/candidato';
-import { buscarCurriculo } from '../actions/curriculo';
 import { buscarEmpresa } from '../actions/empresa';
 import { buscarVaga } from '../actions/vaga';
 import Breadcrumb from '../commun/Breadcrumb';
 import CardVaga from './CardVaga';
-import Curriculo from './Curriculo';
 
 class VagasDisponiveis extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     state = {
         curriculos: []
@@ -28,24 +23,21 @@ class VagasDisponiveis extends React.Component {
 
         let vagas = [];
         let empresas = [];
-        let curriculos = [];
-        let candidato = "";
         let empresaEnvio = "";
 
         var categoria = this.props.match.params.categoria;
-        
+
         if (this.props.empresas != null) {
-            this.props.empresas.map((empresa) => { empresas.push(empresa) } )
+            this.props.empresas.map((empresa) => { empresas.push(empresa) })
         }
-        
+
         if (categoria != null) {
             if (this.props.vagas != null) {
                 vagas = this.props.vagas.map(
                     function (busca, index) {
-
-                        empresas.map((empresa)=> {
-                            if(empresa.email == busca.empresa){
-                                return empresaEnvio = empresa;
+                        empresas.map((empresa) => {
+                            if (empresa.email == busca.empresa) {
+                                empresaEnvio = empresa;
                             }
                         })
                         if (busca.categoria == categoria) {
@@ -59,7 +51,7 @@ class VagasDisponiveis extends React.Component {
                                 salario={busca.salario}
                                 dias={busca.dias}
                                 horario={busca.horario}
-                                empresa= {empresaEnvio}
+                                empresa={empresaEnvio}
                                 qtdVagas={busca.qtdVagas}
                                 id={busca.id}></CardVaga>
                         }
@@ -83,14 +75,28 @@ class VagasDisponiveis extends React.Component {
             }
         }
 
+
+
         var caminho = [
             { nome: "PESQUISA", link: "/vagasdisponiveis" }
         ]
+
+        var erro = <div className="text-center w-100 azulEscuro">
+            <h3 className= "bold azulEscuro">
+                Não encontramos nada por aqui!
+            </h3>
+            <p>
+                Não há vagas disponíveis no momento para <strong>{categoria.toLowerCase()}</strong>
+                <br></br>
+                continue pesquisando, você vai achar algo!
+            </p>
+        </div>
+
         return (
             <div>
-                <Breadcrumb caminho={caminho}></Breadcrumb>
-                <div className="card-deck p-5">
-                    {vagas}
+                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
+                <div className="card-deck m-5">
+                    {vagas.join("") !== "" ? vagas : erro}
                 </div>
             </div>
         )

@@ -1,11 +1,6 @@
-import { event } from 'jquery';
 import React, { Component } from 'react'
-import $ from 'jquery';
 
-export class CursosRepeate extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+export class CursosRepeate extends Component {
 
     state = {
         formacao: "",
@@ -80,7 +75,7 @@ export class CursosRepeate extends React.Component {
                     <input type="file" className="form-control-file" id="exampleFormControlFile1" />
                 </div>
                 <hr></hr>
-                <button type="button" className="btn btn-outline-primary float-right" id="add" onClick={this.enviar}> <strong>Salvar</strong></button>
+                <button type="button" className="btn btn-outline-primary float-right" onClick={this.enviar}> <strong>Salvar</strong></button>
 
             </div>
         )

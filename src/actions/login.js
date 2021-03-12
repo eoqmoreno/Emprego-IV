@@ -6,9 +6,6 @@ export const buscarLoginSucesso = createAction("BUSCAR_LOGIN_SUCESSO");
 
 export const logar = (id, tipo) => {
     return (dispatch, getState) => {
-        $(document).ready(function () {
-            $("#Login").modal("hide");
-        });
         dispatch(buscarLoginSucesso([id, tipo]));
     }
 }   

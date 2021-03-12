@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { updateCandidatura } from '../actions/candidatar';
 import { storage } from '../firebase/firebaseConfig';
-import foto from "../img/candidatos/1.jpg";
 
 class TabelaLinha extends React.Component {
     constructor(props) {

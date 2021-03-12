@@ -7,11 +7,9 @@ import { connect } from 'react-redux';
 import { logar } from '../actions/login';
 import { buscarEmpresa } from '../actions/empresa';
 import { buscarCandidato } from '../actions/candidato';
+import $ from 'jquery';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount = () => {
     this.props.buscarEmpresa();
@@ -21,7 +19,7 @@ class Login extends React.Component {
   state = {
     email: "",
     senha: "",
-    tipo:"password"
+    tipo: "password"
   }
 
   modificou = (event) => {
@@ -35,12 +33,32 @@ class Login extends React.Component {
       this.props.empresas.map(
         (busca) => {
           if (busca.email == user.email && busca.senha == user.senha) {
-            this.props.logar(busca.email, "empresa");
+              $("#Login").modal("hide");
+              $(".alert").addClass("d-none")
+              $('#loading').modal()
+              setTimeout(function () {
+                $('#loading').modal("hide")
+              }, 2000)
+            return this.props.logar(busca.email, "empresa");
+
           } else {
+
             this.props.candidatos.map(
               (busca) => {
                 if (busca.email == user.email && busca.senha == user.senha) {
-                  this.props.logar(busca.email, "candidato");
+
+                  $("#Login").modal("hide");
+                  $(".alert").addClass("d-none")
+                  $('#loading').modal()
+                  setTimeout(function () {
+                    $('#loading').modal("hide")
+                  }, 2000)
+                  return this.props.logar(busca.email, "candidato");
+
+                } else {
+
+                  $(".alert").removeClass("d-none")
+
                 }
               })
           }
@@ -56,21 +74,22 @@ class Login extends React.Component {
       senha: this.state.senha,
     }
     this.logar(user);
+    $(".form-control").val('');
   }
 
   mostrarSenha = () => {
     if (this.state.tipo == "password") {
-        this.setState({
-            tipo: "text",
-        })
+      this.setState({
+        tipo: "text",
+      })
     } else {
-        if (this.state.tipo == "text") {
-            this.setState({
-                tipo: "password",
-            })
-        }
+      if (this.state.tipo == "text") {
+        this.setState({
+          tipo: "password",
+        })
+      }
     }
-}
+  }
 
   render() {
     return (
@@ -91,6 +110,14 @@ class Login extends React.Component {
               <h5 className="modal-title bg-cinza-claro azulEscuro text-center bold"> Bem-vindo à Empregô!</h5>
               <br />
 
+              <div className="alert alert-danger d-none">
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 className="alert-heading">E-mail ou senha incorretos</h5>
+                <p>Alguma coisa deu errado, tenta entrar novamente ou faz o cadastro que a gente espera você aqui!</p>
+              </div>
+
               <form onSubmit={this.submeter}>
 
                 <div className="form-group">
@@ -98,8 +125,8 @@ class Login extends React.Component {
                   <input type="email" className="form-control" onChange={this.modificou} id="email" required />
                 </div>
                 <div className="input-group">
-                  <label className="color col-12 p-0 m-0">Senha:</label>
-                  <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required />
+                  <label className="col-12 p-0 m-0" htmlFor="senha">Senha:</label>
+                  <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required/>
                   <div className="input-group-append">
                     <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
                   </div>

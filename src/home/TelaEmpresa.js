@@ -20,7 +20,7 @@ export default class TelaEmpresa extends React.Component {
 
                             <p className="">• Você se cadastra no site;</p>
                             <p className="">• Vai em "Publicar Vaga";</p>
-                            <p className="">• Preenche os requisitos da vaga e pública</p>
+                            <p className="">• Preenche os requisitos da vaga e pública.</p>
                             <p className="bold">Prontinho!</p>
                             <p className="">Agora é só aguardar.</p>
                         </div>

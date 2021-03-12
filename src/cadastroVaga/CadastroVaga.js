@@ -3,15 +3,12 @@ import { connect } from 'react-redux';
 import { buscarCategoria } from '../actions/categoria';
 import { buscarHabilidade } from '../actions/habilidade';
 import { buscarProfissao } from '../actions/profissao';
-import { addVaga, buscarVaga } from '../actions/vaga';
+import { addVaga } from '../actions/vaga';
 import Breadcrumb from '../commun/Breadcrumb';
 import { Select } from 'antd';
-
+import { Link } from 'react-router-dom';
 
 class CadastroVaga extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     state = {
         categoria: "",
@@ -50,7 +47,6 @@ class CadastroVaga extends React.Component {
             empresa: this.props.login[0],
             id: Date.now(),
         }
-        console.log(vaga)
         this.props.addVaga(vaga);
     }
 
@@ -71,6 +67,7 @@ class CadastroVaga extends React.Component {
             interpessoais: value,
         })
     }
+
     render() {
 
         const { Option } = Select;
@@ -118,8 +115,8 @@ class CadastroVaga extends React.Component {
 
         return (
             <div>
-                <Breadcrumb caminho={caminho}></Breadcrumb>
-                <div className="container p-0">
+                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
+                <div className="container p-0 m-5">
                     <div className="row m-0 p-0">
                         <div className="col-lg-6 col-12">
 
@@ -193,6 +190,8 @@ class CadastroVaga extends React.Component {
                                         style={{ width: '100%' }}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funTecnica}
+                                        rules={[{ required: true }]}
+                                        notFoundContent="Nada por aqui!"
                                     >
                                         {habiTecnica}
                                     </Select>
@@ -205,6 +204,8 @@ class CadastroVaga extends React.Component {
                                         style={{ width: '100%' }}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funInterpessoais}
+                                        rules={[{ required: true }]}
+                                        notFoundContent="Nada por aqui!"
                                     >
                                         {habiInterpessoais}
                                     </Select>
@@ -217,7 +218,10 @@ class CadastroVaga extends React.Component {
 
 
                                 <br></br>
-                                <input type="submit" className="btn btn-primary float-right" value="Publicar vaga"></input>
+                                <div className="col p-0 text-right">
+                                    <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
+                                    <button type="submit" className="btn btn-primary ml-2 m-0">Publicar vaga</button>
+                                </div>
                             </form>
                         </div>
 

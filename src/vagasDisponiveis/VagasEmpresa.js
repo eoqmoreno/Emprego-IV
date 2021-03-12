@@ -3,13 +3,9 @@ import { connect } from 'react-redux';
 import { buscarEmpresa } from '../actions/empresa';
 import { buscarVaga } from '../actions/vaga';
 import Breadcrumb from '../commun/Breadcrumb';
-import CardVaga from '../vagasDisponiveis/CardVaga';
 import CardVagaEmpresa from './CardVagaEmpresa';
 
 class VagasEmpresa extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount = () => {
         this.props.buscarVaga();
@@ -19,9 +15,9 @@ class VagasEmpresa extends React.Component {
     render() {
         let vagas = [];
         
-        if(this.props.login != "" && this.props.vagas != null){
-            this.props.vagas.map((busca)=> {if(this.props.login[0] == busca.empresa){
-                vagas.push(<CardVagaEmpresa foto={this.props.login[0]} id={busca.empresa} profissao={busca.profissao} descricao={busca.descricao} salario={busca.salario} dias={busca.dias} horario={busca.horario} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} idVaga={busca.id}></CardVagaEmpresa>)
+        if(this.props.login !== "" && this.props.vagas !== null){
+            this.props.vagas.map((busca, index)=> {if(this.props.login[0] === busca.empresa){
+                return vagas.push(<CardVagaEmpresa key={index} foto={this.props.login[0]} id={busca.empresa} profissao={busca.profissao} descricao={busca.descricao} salario={busca.salario} dias={busca.dias} horario={busca.horario} habTecnica={busca.habTecnica} habInterpessoais={busca.habInterpessoais} idVaga={busca.id}></CardVagaEmpresa>)
             }})
         }
 
@@ -30,8 +26,8 @@ class VagasEmpresa extends React.Component {
         ]
         return (
             <div>
-                <Breadcrumb caminho={caminho}></Breadcrumb>
-                <div className="card-deck bg-light p-0 row m-0 justify-content-center">
+                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
+                <div className="card-deck p-0 row m-5 justify-content-center">
                     {vagas}
                 </div>
             </div>

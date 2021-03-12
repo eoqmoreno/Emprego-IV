@@ -1,6 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import $ from "jquery";
+import { database } from "../firebase/firebaseConfig";
 export const buscarCandidaturaIniciado = createAction("BUSCAR_OFERTA");
 export const buscarCandidaturaSucesso = createAction("BUSCAR_OFERTA_SUCESSO");
 
@@ -39,29 +40,25 @@ export const addCandidatura = (candidatura) => {
 }
 
 export const updateCandidatura = (id, candidatura) => {
-    let chave = "";
-    axios({
-        method: "GET",
-        url: url,
-    }).then(response => {
-        let result = [];
-        let ids = [];
-        for (let key in response.data) {
-            if(response.data[key].id == id){
-                chave = key;
-            }
-        }
-    })
-    return (dispatch, getState) => {
-        axios({
-            method: "PUT",
-            url: url + chave,
-            data: candidatura,
-        }).then(response => {
-            dispatch(buscarCandidatura());
-            $(document).ready(function () {
-                $("#entrevistaSolicitada").modal();
-            });
-        })
-    }
+
+    console.log(database.ref().child('candidatura').orderByKey().once('value',snap=>{return snap}))
+
+//     return(dispatch, getState) => {
+//         database.ref('candidatura/' + "-MUKIudZk3z-vGpb-Wfc").set({
+//             vaga: candidatura.vaga,
+//             curriculo: candidatura.curriculo,
+//             estado: candidatura.estado,
+//             id: id,
+//     },
+//     (error) => {
+//         if (error) {
+//             console.log(error)
+//         } else {
+//             $(document).ready(function () {
+//                 dispatch(buscarCandidatura())
+//                 $("#entrevistaSolicitada").modal();
+//             });
+//         }
+//     })
+// }
 }

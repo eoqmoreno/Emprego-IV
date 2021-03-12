@@ -87,6 +87,7 @@ html{
     margin: 10px;
     text-align: center;
 }
+
 .btn-outline-primary{
     border-color: #303393;
     color: #303393;
@@ -185,24 +186,12 @@ html{
 .color{
     color: var(--azul-escuro);
 }
-    
 
-   
-
-
-
-
-/* NATIVE CSS*/
-
-body {
-    margin: 0;
-    font-family: Proxima;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+input:focus:invalid:required{
+    border: 1px solid red;
 }
-  
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+
+.file{
+	height: 0.1px;
+	opacity: 0; 
 }

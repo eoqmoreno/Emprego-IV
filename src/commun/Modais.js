@@ -6,7 +6,7 @@ import aguarde from '../img/aguarde.png'
 import $ from 'jquery';
 
 
-export class Modais extends React.Component {
+export class Modais extends Component {
     render() {
         return (
             <div>
@@ -87,10 +87,10 @@ export class Modais extends React.Component {
                                 </div>
                             </div>
                             <div className="text-center modal-footer pt-0 border-0 justify-content-center">
-                                <span>Clique em Entrar para acessar ser perfil</span>
+                                <span>Clique em entrar para acessar seu perfil</span>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <Link className="btn btn-primary" onClick={()=>{$('#cadastroSucesso').modal('hide');}} to="/">Entrar</Link>
+                                <Link className="btn btn-primary" onClick={() => { $('#cadastroSucesso').modal('hide'); }} to="/">Entrar</Link>
                             </div>
                         </div>
                     </div>
@@ -148,6 +148,15 @@ export class Modais extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="modal fade" tabIndex="-1" id="loading" role="dialog" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                            <div className="spinner-border text-info" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                    </div>
+                </div>
+
             </div>
         )
     }
