@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20670b4898dcebc907767adad4f98157",
+    "revision": "2d94523a0c0f8bc81200c555fde65ed8",
     "url": "/Emprego-IV/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Emprego-IV/static/css/2.815e8445.chunk.css"
   },
   {
-    "revision": "ce5a44ccaf289e667e34",
+    "revision": "42c0c2abf6f5192ca199",
     "url": "/Emprego-IV/static/css/main.d08b38da.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Emprego-IV/static/js/2.dc0ddf31.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ce5a44ccaf289e667e34",
-    "url": "/Emprego-IV/static/js/main.b1e1786e.chunk.js"
+    "revision": "42c0c2abf6f5192ca199",
+    "url": "/Emprego-IV/static/js/main.eb0fa2f7.chunk.js"
   },
   {
     "revision": "114b2f94051c7de6a268",

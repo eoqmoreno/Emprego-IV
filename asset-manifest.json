@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Emprego-IV/static/css/main.d08b38da.chunk.css",
-    "main.js": "/Emprego-IV/static/js/main.b1e1786e.chunk.js",
-    "main.js.map": "/Emprego-IV/static/js/main.b1e1786e.chunk.js.map",
+    "main.js": "/Emprego-IV/static/js/main.eb0fa2f7.chunk.js",
+    "main.js.map": "/Emprego-IV/static/js/main.eb0fa2f7.chunk.js.map",
     "runtime-main.js": "/Emprego-IV/static/js/runtime-main.538ec09f.js",
     "runtime-main.js.map": "/Emprego-IV/static/js/runtime-main.538ec09f.js.map",
     "static/css/2.815e8445.chunk.css": "/Emprego-IV/static/css/2.815e8445.chunk.css",
     "static/js/2.dc0ddf31.chunk.js": "/Emprego-IV/static/js/2.dc0ddf31.chunk.js",
     "static/js/2.dc0ddf31.chunk.js.map": "/Emprego-IV/static/js/2.dc0ddf31.chunk.js.map",
     "index.html": "/Emprego-IV/index.html",
-    "precache-manifest.1b0e9baeb49de831060b29ac6bf39225.js": "/Emprego-IV/precache-manifest.1b0e9baeb49de831060b29ac6bf39225.js",
+    "precache-manifest.06291bd7c90ad50c6e74156ac3730486.js": "/Emprego-IV/precache-manifest.06291bd7c90ad50c6e74156ac3730486.js",
     "service-worker.js": "/Emprego-IV/service-worker.js",
     "static/css/2.815e8445.chunk.css.map": "/Emprego-IV/static/css/2.815e8445.chunk.css.map",
     "static/css/main.d08b38da.chunk.css.map": "/Emprego-IV/static/css/main.d08b38da.chunk.css.map",
@@ -30,6 +30,6 @@
     "static/css/2.815e8445.chunk.css",
     "static/js/2.dc0ddf31.chunk.js",
     "static/css/main.d08b38da.chunk.css",
-    "static/js/main.b1e1786e.chunk.js"
+    "static/js/main.eb0fa2f7.chunk.js"
   ]
 }
