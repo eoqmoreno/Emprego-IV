@@ -47,33 +47,29 @@ export class ExperienciasRepeate extends Component {
         const dateFormat = 'YYYY';
 
         return (
-            <div className="experiencia">
-                <div className="form-row">
-                    <div className="col-12">
+            <div className="experiencia form-row">
+                    <div className="col-12 form-group">
                         <label className="color" htmlFor="empresaTrabalhou"> Nome da empresa </label>
                         <input type="text" className="form-control" id="empresaTrabalhou" aria-describedby="emailHelp" onChange={this.modificou} />
                     </div>
 
-                    <br></br>
+                    <div className="form-row m-0 p-0">
+                        <div className="col-6 form-group">
+                            <label className="color" htmlFor="cargoOcupado">Cargo ocupado</label>
+                            <input type="text" className="form-control" id="cargoOcupado" onChange={this.modificou} />
+                        </div>
 
-                    <div className="col-6 form-group">
-                        <label className="color" htmlFor="cargoOcupado">Cargo ocupado</label>
-                        <input type="text" className="form-control" id="cargoOcupado" onChange={this.modificou} />
+                        <div className="col-6 form-group">
+                            <label className="color" htmlFor="periodo">Período</label>
+                            <RangePicker picker="year" onChange={this.onChange} format={dateFormat} placeholder={["Entrada", "Saída"]} />
+                        </div>
+                        
                     </div>
 
-                    <br></br>
-
-                    <div className="col-6 form-group">
-                        <label className="color" htmlFor="periodo">Período</label>
-                        <RangePicker picker="year" onChange={this.onChange} format={dateFormat} placeholder={["Entrada", "Saída"]} />
-                    </div>
-
-                    <br></br>
                     <div className="form-group col-12">
                         <label className="color" htmlFor="descriçãoAtividades"> Descrição </label>
                         <textarea className="form-control" id="descriçãoAtividades" rows="3" placeholder="Quais foram as atividades que você exerceu durante o cargo?" onChange={this.modificou}></textarea>
                     </div>
-                </div>
 
 
                 <div className="custom-control custom-checkbox" id="checkboxE">

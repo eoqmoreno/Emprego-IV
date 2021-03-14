@@ -149,14 +149,17 @@ class CadastroVaga extends React.Component {
                                     <textarea className="form-control" onChange={this.modificou} id="descricao" rows="3" required></textarea>
                                 </div>
                                 <div className="form-row">
-                                    <div className="col">
+                                    <div className="col-6">
                                         <label className="color" htmlFor="salario">Salário</label>
-                                        <input type="number" id="salario" onChange={this.modificou} placeholder="R$" min="0" className="form-control" required/>
+                                        <input type="number" id="salario" onChange={this.modificou} placeholder="R$" min="0" className="form-control" required />
                                     </div>
-                                    <div className="col">
+                                    <div className="col-6">
                                         <label className="color" htmlFor="horario">Carga horária</label>
                                         <small className="text-muted"> (horas por dia)</small>
-                                        <input type="number" id="horario" onChange={this.modificou} className="form-control" min="1" max="8" required/>
+                                        <input type="number" id="horario" onChange={this.modificou} className="form-control" min="1" max="8" required />
+                                        <div className="col-12 text-right px-0">
+                                            <small className="text-muted">Valor máximo de 8 horas</small>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -176,7 +179,7 @@ class CadastroVaga extends React.Component {
                                 <br></br>
                                 <div className="form-group">
                                     <label className="color" htmlFor="qtdVagas">Quantas vagas você deseja ofertar?</label>
-                                    <input type="number" className="form-control w-25" onChange={this.modificou} id="qtdVagas" aria-describedby="text" min="1" required/>
+                                    <input type="number" className="form-control w-25" onChange={this.modificou} id="qtdVagas" aria-describedby="text" min="1" required />
                                     <small id="text" className="form-text text-muted"></small>
                                 </div>
                                 <br></br>
@@ -213,7 +216,7 @@ class CadastroVaga extends React.Component {
                                 <div className="form-group"></div>
                                 <label className="color" htmlFor="perfil">O que você espera dos candidatos a esta vaga?</label>
                                 <small className="text-muted"> (Opcional) </small>
-                                <textarea className="form-control" onChange={this.modificou} id="perfil" rows="3" required></textarea>
+                                <textarea className="form-control" onChange={this.modificou} id="perfil" rows="3"></textarea>
 
 
 

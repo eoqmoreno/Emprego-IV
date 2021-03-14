@@ -16,7 +16,7 @@ class Footer extends React.Component {
         if(this.props.categorias != null){
             categoria = this.props.categorias.map(
                 (busca, index) => (
-                    <Link className="btn col-2 mx-1 my-2 btn-outline-primary bg-branco bold" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
+                    <Link className="btn col-2 mx-2 my-2 btn-outline-primary bg-branco bold" key={index} to={"/vagasdisponiveis/"+busca.nome}>{busca.nome}</Link>
                 )
              )
         }

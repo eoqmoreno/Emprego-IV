@@ -136,7 +136,7 @@ class Empresa extends React.Component {
 
                                 <div className="input-group">
                                     <label className="color col-12 p-0 m-0">Senha:</label>
-                                    <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required />
+                                    <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required minLength="8"/>
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
                                     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { buscarEmpresa } from '../actions/empresa';
 import { buscarVaga } from '../actions/vaga';
 import Breadcrumb from '../commun/Breadcrumb';
@@ -24,11 +25,23 @@ class VagasEmpresa extends React.Component {
         var caminho = [
             { nome: "LISTA DE VAGAS ", link: "/vagascadastradas/" }
         ]
+
+        var erro = <div className="text-center w-100 azulEscuro">
+            <h3 className= "bold azulEscuro">
+                Não encontramos nada por aqui!
+            </h3>
+            <p>
+                Não há vagas cadastradas ainda
+                <br></br>
+                para cadastrar basta <Link to="/cadastrarvaga">clicar aqui!</Link>
+            </p>
+        </div>
+
         return (
             <div>
                 {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
                 <div className="card-deck p-0 row m-5 justify-content-center">
-                    {vagas}
+                    {vagas.join("") !== "" ? vagas : erro}
                 </div>
             </div>
         )
