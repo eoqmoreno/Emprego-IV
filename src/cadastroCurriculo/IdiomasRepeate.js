@@ -66,9 +66,8 @@ export class IdiomasRepeate extends Component {
                     <input type="checkbox" className="custom-control-input" id="temIdioma" value="true" onChange={()=>{$(".idioma :input").attr("disabled", true)}}/>
                     <br></br>
                     <label className="custom-control-label color" htmlFor="temIdioma">NÃO POSSUO CURSOS </label>
-                </div>
-                <hr></hr>
                     <button type="button" className="btn btn-outline-primary float-right" onClick={this.enviar}> <strong>Salvar</strong></button>
+                </div>
             </div>
         )
     }

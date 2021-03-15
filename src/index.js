@@ -31,12 +31,12 @@ import App from './App';
 
 
 // loading
-window.onload = function () {
-  $('#loading').modal()
-  setTimeout(function () {
-    $('#loading').modal("hide")
-  }, 2000)
-}
+// window.onload = function () {
+//   $('#loading').modal()
+//   setTimeout(function () {
+//     $('#loading').modal("hide")
+//   }, 2000)
+// }
 
 ReactDOM.render(
   <React.StrictMode>

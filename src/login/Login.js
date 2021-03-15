@@ -33,12 +33,12 @@ class Login extends React.Component {
       this.props.empresas.map(
         (busca) => {
           if (busca.email == user.email && busca.senha == user.senha) {
-              $("#Login").modal("hide");
-              $(".alert").addClass("d-none")
-              $('#loading').modal()
-              setTimeout(function () {
-                $('#loading').modal("hide")
-              }, 2000)
+            $("#Login").modal("hide");
+            $(".alert").addClass("d-none")
+            $('#loading').modal()
+            setTimeout(function () {
+              $('#loading').modal("hide")
+            }, 2000)
             return this.props.logar(busca.email, "empresa");
 
           } else {
@@ -94,7 +94,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="modal fade" id="Login" role="dialog" aria-labelledby="Login" aria-hidden="true">
-        <div className="modal-dialog modal-sm" role="document">
+        <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header border-0">
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -102,14 +102,12 @@ class Login extends React.Component {
               </button>
             </div>
             <div className="modal-body">
-
               <div className="text-center">
                 <img className="" src={Logo} alt=""></img>
               </div>
               <br />
               <h5 className="modal-title bg-cinza-claro azulEscuro text-center bold"> Bem-vindo à Empregô!</h5>
               <br />
-
               <div className="alert alert-danger d-none">
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -118,7 +116,7 @@ class Login extends React.Component {
                 <p>Alguma coisa deu errado, tenta entrar novamente ou faz o cadastro que a gente espera você aqui!</p>
               </div>
 
-              <form onSubmit={this.submeter}>
+              <form onSubmit={this.submeter} className="m-5">
 
                 <div className="form-group">
                   <label htmlFor="email" className="m-0">E-mail</label>
@@ -126,24 +124,27 @@ class Login extends React.Component {
                 </div>
                 <div className="input-group">
                   <label className="col-12 p-0 m-0" htmlFor="senha">Senha:</label>
-                  <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required/>
+                  <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required />
                   <div className="input-group-append">
                     <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
                   </div>
                 </div>
+                <br></br>
                 <div className="justify-content-center d-flex">
                   <input type="submit" className="btn btn-primary" value="Entrar"></input>
                 </div>
-                <br></br>
+
               </form>
+              <div className="text-center">
+                <button className="azulEscuro btn bg-transparent m-0 p-0" href="/">Eita! Esqueci minha senha</button>
+              </div>
+              <div className="text-center modal-footer pt-0 border-0 justify-content-center">
+                <span>Ainda não tem uma conta? </span>
+                <button type="button" className="btn bg-transparent m-0 p-0 w-content d-inline azulEscuro bold" data-toggle="modal" data-target="#cadastroOpcao" data-dismiss="modal">Faz aqui!</button>
+              </div>
             </div>
-            <div className="text-center">
-              <button className="azulEscuro btn bg-transparent m-0 p-0" href="/">Eita! Esqueci minha senha</button>
-            </div>
-            <div className="text-center modal-footer pt-0 border-0 justify-content-center">
-              <span>Ainda não tem uma conta? </span>
-              <button type="button" className="btn bg-transparent m-0 p-0 w-content d-inline azulEscuro bold" data-toggle="modal" data-target="#cadastroOpcao" data-dismiss="modal">Faz aqui!</button>
-            </div>
+
+
           </div>
         </div>
       </div>

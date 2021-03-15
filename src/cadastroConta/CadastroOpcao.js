@@ -8,7 +8,7 @@ export default class CadastroOpcao extends React.Component {
   render() {
     return (
       <div className="modal fade" id="cadastroOpcao" role="dialog" aria-labelledby="cadastroOpcao" aria-hidden="true">
-        <div className="modal-dialog modal-sm" role="document">
+        <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header border-0">
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">

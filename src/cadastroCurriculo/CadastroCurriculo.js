@@ -262,7 +262,8 @@ class CadastroCurriculo extends React.Component {
                                     <IdiomaCadastrado key={index} id={index} idioma={busca.idioma} nivelIdionma={busca.nivelIdionma} removerIdioma={this.removerIdioma}></IdiomaCadastrado>
                                 ))}
                                 {this.state.qtdIdiomas}
-                                <br></br><br></br>
+                                <br></br>
+                                <hr></hr>
                                 <div className="col p-0 mt-1 text-right">
                                     <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
                                     <button type="submit" className="btn btn-primary ml-2 m-0">Salvar currículo</button>

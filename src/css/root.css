@@ -188,10 +188,19 @@ html{
 }
 
 input:focus:invalid:required{
-    border: 1px solid red;
+    border: 2px solid red;
+}
+input:focus:valid:required{
+    border: 2px solid green;
 }
 
 .file{
 	height: 0.1px;
 	opacity: 0; 
+}
+
+.image-cropper {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
 }

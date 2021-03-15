@@ -86,73 +86,76 @@ class Empresa extends React.Component {
 
             <div>
                 {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
-                <div className="container bg-white p-0 m-5">
-                    <div className="row m-0 p-0">
+                <div className="m-5 p-0 row bg-white">
+                    <div className="col-lg-6 col-12">
 
-                        <div className="col-lg-6 col-12">
-                            <form onSubmit={this.enviar}>
-                                <div className="form-group text-center">
-                                    <label htmlFor="photoFile">
-                                        <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
-                                        <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
-                                    </label>
-                                    <input type="file" className="file" id="photoFile" required accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} />
-                                </div>
+                        <h5 className="color font-weight-bold text-center"> Cadastro da Empresa </h5>
 
-                                <div className="form-group">
-                                    <label className="color" htmlFor="nome">Nome jurídico da empresa:</label>
-                                    <input type="text" className="form-control" id="nomeJuridico" onChange={this.modificou} required></input>
-                                </div>
 
-                                <div className="form-group">
-                                    <label className="color" htmlFor="nome">Nome fantasia:</label>
-                                    <input type="text" className="form-control" id="nomeFantasia" onChange={this.modificou} required></input>
-                                </div>
+                        <form onSubmit={this.enviar}>
+                            <div className="text-center pt-4">
+                                <label htmlFor="photoFile">
+                                    <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
+                                    <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
+                                </label>
+                                <br></br>
+                                <input type="file" className="file" id="photoFile" accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} required />
+                            </div>
 
-                                <div className="form-group">
+                            <div className="form-group">
+                                <label className="color" htmlFor="nome">Nome jurídico da empresa:</label>
+                                <input type="text" className="form-control" id="nomeJuridico" onChange={this.modificou} required></input>
+                            </div>
+
+                            <div className="form-group">
+                                <label className="color" htmlFor="nome">Nome fantasia:</label>
+                                <input type="text" className="form-control" id="nomeFantasia" onChange={this.modificou} required></input>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-6">
                                     <label className="color" htmlFor="nome">CNPJ:</label>
                                     <input type="text" className="form-control cnpj" id="cnpj" placeholder="00.000.000/0000-00" onChange={this.modificou} required></input>
                                 </div>
-
-                                <div className="form-group">
-                                    <label className="color" htmlFor="nome">Endereço completo:</label>
-                                    <input type="text" className="form-control" id="endereco" placeholder="Rua, Nº, Sala, Bairro" onChange={this.modificou} required></input>
-                                </div>
-
-                                <div className="form-group">
+                                <div className="form-group col-6">
                                     <label className="color">Telefone:</label>
                                     <input type="tel" id="telefone" onChange={this.modificou} placeholder="(00) 0 0000-0000" className="form-control telefone w-100" required></input>
                                 </div>
+                            </div>
 
-                                <div className="form-group">
-                                    <label className="color" htmlFor="email">Descrição da empresa:</label>
-                                    <textarea id="descricao" onChange={this.modificou} className="form-control" required placeholder="Ramo de atuação, missão, tempo de mercado"></textarea>
+                            <div className="form-group">
+                                <label className="color" htmlFor="nome">Endereço completo:</label>
+                                <input type="text" className="form-control" id="endereco" placeholder="Rua, Nº, Sala, Bairro" onChange={this.modificou} required></input>
+                            </div>
+
+                            <div className="form-group">
+                                <label className="color" htmlFor="email">Descrição da empresa:</label>
+                                <textarea id="descricao" onChange={this.modificou} className="form-control" required placeholder="Ramo de atuação, missão, tempo de mercado"></textarea>
+                            </div>
+
+                            <div className="form-group">
+                                <label className="color" htmlFor="email">Email:</label>
+                                <input type="email" id="email" onChange={this.modificou} className="form-control" required></input>
+                            </div>
+
+                            <div className="input-group">
+                                <label className="color col-12 p-0 m-0">Senha:</label>
+                                <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required minLength="8" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
                                 </div>
+                                <small className="col-12 m-0 p-0 azulEscuro text-right">Deve ter de 8 a 20 caracteres</small>
+                            </div>
 
-                                <div className="form-group">
-                                    <label className="color" htmlFor="email">Email:</label>
-                                    <input type="email" id="email" onChange={this.modificou} className="form-control" required></input>
-                                </div>
+                            <br></br>
 
-                                <div className="input-group">
-                                    <label className="color col-12 p-0 m-0">Senha:</label>
-                                    <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required minLength="8"/>
-                                    <div className="input-group-append">
-                                        <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
-                                    </div>
-                                    <small className="col-12 m-0 p-0 azulEscuro text-right">Deve ter de 8 a 20 caracteres</small>
-                                </div>
-
-                                <br></br>
-
-                                <div className="col p-0 text-right">
-                                    <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
-                                    <button type="submit" className="btn btn-primary ml-2 m-0">Cadastrar</button>
-                                </div>
-                            </form>
-                        </div>
-
+                            <div className="col p-0 text-right">
+                                <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
+                                <button type="submit" className="btn btn-primary ml-2 m-0">Cadastrar</button>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div >
 

@@ -16,7 +16,7 @@ class TabelaLinha extends Component {
     render() {
         return (
             <tr key={this.props.chave}>
-                <td className="align-middle">Curriculo {this.props.chave + 1}</td>
+                <td className="align-middle">Currículo {this.props.chave + 1}</td>
 
                 <td className="align-middle">
                     <button className="btn btn-outline-primary" data-toggle="modal" data-target={"#modal" + this.props.chave} data-dismiss="modal">Ver currículo</button>

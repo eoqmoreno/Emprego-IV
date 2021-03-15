@@ -73,10 +73,9 @@ export class CursosRepeate extends Component {
                 <div className="form-group">
                     <label className="color" htmlFor="exampleFormControlFile1"> Arquivo do certificado ou comprovante </label>
                     <input type="file" className="form-control-file" id="exampleFormControlFile1" />
+                    <button type="button" className="btn btn-outline-primary float-right" onClick={this.enviar}> <strong>Salvar</strong></button>
                 </div>
-                <hr></hr>
-                <button type="button" className="btn btn-outline-primary float-right" onClick={this.enviar}> <strong>Salvar</strong></button>
-
+                <br></br>
             </div>
         )
     }

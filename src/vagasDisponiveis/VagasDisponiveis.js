@@ -86,9 +86,9 @@ class VagasDisponiveis extends React.Component {
                 Não encontramos nada por aqui!
             </h3>
             <p>
-                Não há vagas disponíveis no momento para <strong>{categoria.toLowerCase()}</strong>
+                Não há vagas disponíveis no momento para <strong>{categoria.toLowerCase()}</strong>.
                 <br></br>
-                continue pesquisando, você vai achar algo!
+                Continue pesquisando, você vai achar algo!
             </p>
         </div>
 

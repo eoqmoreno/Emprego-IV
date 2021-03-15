@@ -17,8 +17,8 @@ class CardVaga extends React.Component {
     componentDidMount = () => {
         this.props.buscarCandidato();
 
-        var foto = storage.ref().child('empresa/'+ this.props.empresa.email).getDownloadURL();
-        foto.then((result)=>{
+        var foto = storage.ref().child('empresa/' + this.props.empresa.email).getDownloadURL();
+        foto.then((result) => {
             console.log(result)
             this.setState({
                 render: result,
@@ -33,7 +33,8 @@ class CardVaga extends React.Component {
         return (
             <div className="card line-cinza-escuro col-lg-3 col-12">
                 <div className="card-body text-center">
-                    <img src={this.state.render} className="rounded-circle mb-2 w-50"></img>
+                    <img src={this.state.render} className="rounded-circle mb-3 image-cropper"></img>
+
                     <br></br>
                     <h5 className="">{this.props.empresa.nomeFantasia}</h5>
 

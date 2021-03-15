@@ -79,62 +79,62 @@ class Candidato extends React.Component {
 
             <div>
                 {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
-                <div className="container bg-white p-0 m-5">
-                    <div className="row m-0 p-0">
+                <div className="row bg-white p-0 m-5">
+                    <div className="col-lg-6 col-12">
 
-                        <div className="col-lg-6 col-12">
-                            <form onSubmit={this.enviar}>
+                        <h5 className="color font-weight-bold text-center"> Cadastro do Candidato </h5>
+                        <form onSubmit={this.enviar}>
 
-                                <div className="form-group text-center">
-                                    <label htmlFor="photoFile">
-                                        <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
-                                        <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
-                                    </label>
-                                    <input type="file" className="file" id="photoFile" accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} required/>
-                                </div>
-
-                                <div className="form-group">
-                                    <label className="color" htmlFor="nome">Nome completo:</label>
-                                    <input type="text" className="form-control" id="nome" onChange={this.modificou} required></input>
-                                </div>
-
-
-                                <div className="form-row">
-                                    <div className="input-group col">
-                                        <label className="color">Telefone:</label>
-                                        <input type="tel" id="telefone" onChange={this.modificou} className="form-control telefone w-100" placeholder="(00) 0 0000-0000" required></input>
-                                    </div>
-
-                                    <div className="input-group col">
-                                        <label className="color">Data:</label>
-                                        <input type="date" id="nascimento" onChange={this.modificou} className="form-control w-100" required></input>
-                                    </div>
-                                </div>
-
+                            <div className="text-center pt-4">
+                                <label htmlFor="photoFile">
+                                    <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
+                                    <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
+                                </label>
                                 <br></br>
-                                <div className="form-group">
-                                    <label className="color" htmlFor="email">Email:</label>
-                                    <input type="email" id="email" onChange={this.modificou} className="form-control" required></input>
+                                <input type="file" className="file" id="photoFile" accept="image/jpeg, image/png" onChange={(e) => this.modificouImg(e)} required />
+                            </div>
+
+                            <div className="form-group">
+                                <label className="color" htmlFor="nome">Nome completo:</label>
+                                <input type="text" className="form-control" id="nome" onChange={this.modificou} required></input>
+                            </div>
+
+
+                            <div className="form-row">
+                                <div className="input-group col">
+                                    <label className="color">Telefone:</label>
+                                    <input type="tel" id="telefone" onChange={this.modificou} className="form-control telefone w-100" placeholder="(00) 0 0000-0000" required></input>
                                 </div>
 
-                                <div className="input-group">
-                                    <label className="color col-12 p-0 m-0">Senha:</label>
-                                    <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required minLength="8"/>
-                                    <div className="input-group-append">
-                                        <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
-                                    </div>
-                                    <small className="col-12 m-0 p-0 azulEscuro text-right">Deve ter de 8 a 20 caracteres</small>
+                                <div className="input-group col">
+                                    <label className="color">Data:</label>
+                                    <input type="date" id="nascimento" onChange={this.modificou} className="form-control w-100" required></input>
                                 </div>
-                                <br></br>
+                            </div>
 
-                                <div className="col p-0 text-right">
-                                    <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
-                                    <button type="submit" className="btn btn-primary ml-2 m-0">Cadastrar</button>
+                            <br></br>
+                            <div className="form-group">
+                                <label className="color" htmlFor="email">Email:</label>
+                                <input type="email" id="email" onChange={this.modificou} className="form-control" required></input>
+                            </div>
+
+                            <div className="input-group">
+                                <label className="color col-12 p-0 m-0">Senha:</label>
+                                <input type={this.state.tipo} className="form-control" onChange={this.modificou} aria-describedby="ver" id="senha" required minLength="8" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-primary" type="button" id="ver" onClick={this.mostrarSenha}><FiEye></FiEye></button>
                                 </div>
-                            </form>
-                        </div>
+                                <small className="col-12 m-0 p-0 azulEscuro text-right">Deve ter de 8 a 20 caracteres</small>
+                            </div>
+                            <br></br>
 
+                            <div className="col p-0 text-right">
+                                <Link to="/" className="btn btn-outline-danger m-0">Cancelar</Link>
+                                <button type="submit" className="btn btn-primary ml-2 m-0">Cadastrar</button>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div >
 

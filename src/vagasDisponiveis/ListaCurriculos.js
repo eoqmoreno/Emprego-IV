@@ -31,13 +31,13 @@ class ListaCurriculos extends React.Component {
         var vaga = this.props.match.params.vaga;
 
         if (this.props.candidatos !== null) {
-            this.props.candidatos.map((busca) => { candidatos.push(busca) } )
+            this.props.candidatos.map((busca) => { candidatos.push(busca) })
         }
 
         if (this.props.curriculos != null && this.props.candidatos != null && this.props.login != null) {
             this.props.curriculos.map((curriculo, index) => {
-                candidatos.map((candidato)=> {
-                    if(candidato.email === curriculo.candidato){
+                candidatos.map((candidato) => {
+                    if (candidato.email === curriculo.candidato) {
                         return candidatoEnvio = candidato;
                     }
                 })
@@ -53,28 +53,32 @@ class ListaCurriculos extends React.Component {
         ]
 
         var erro = <div className="text-center w-100 azulEscuro">
-            <h3 className= "bold azulEscuro">
+            <h3 className="bold azulEscuro">
                 Não encontramos nada por aqui!
             </h3>
             <p>
-                Não há curriculos cadastrados no momento
+                Não há curriculos cadastrados no momento.
                 <br></br>
-                preencha o seu currículo <Link to="/cadastrarcurriculo">clicando aqui!</Link>
+                Preencha o seu currículo <Link to="/cadastrarcurriculo">clicando aqui!</Link>
             </p>
         </div>
-
+        
+        let title = <h5 className="color font-weight-bold text-center"> Lista de currículos </h5>;
         return (
-            <div>
+            <div className="m-5">
                 {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
-                <table className="table table-hover border-0 text-center">    
+
+                {tabela.join("") !== "" ? title : ""}
+                
+
+                <table className="table table-hover border-0 text-center">
                     <tbody>
-                        {tabela.join("") !== "" || tabela.length == 0 ? tabela : erro}
-                        {/* {erro} */}
+                        {tabela.join("") !== "" ? tabela : erro}
                     </tbody>
 
                 </table>
                 {modais}
-            </div >
+            </div>
 
 
         )
