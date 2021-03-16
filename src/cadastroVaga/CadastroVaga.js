@@ -116,7 +116,7 @@ class CadastroVaga extends React.Component {
         return (
             <div>
                 {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
-                <div className="container p-0 m-5">
+                <div className="m-5">
                     <div className="row m-0 p-0">
                         <div className="col-lg-6 col-12">
 

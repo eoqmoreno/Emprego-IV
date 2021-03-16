@@ -7,14 +7,14 @@ import { storage } from '../firebase/firebaseConfig';
 export default class Curriculo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  
-            render:"",
+        this.state = {
+            render: "",
         }
     }
 
-    componentDidMount(){
-        var foto = storage.ref().child('candidato/'+ this.props.candidato.email).getDownloadURL();
-        foto.then((result)=>{
+    componentDidMount() {
+        var foto = storage.ref().child('candidato/' + this.props.candidato.email).getDownloadURL();
+        foto.then((result) => {
             this.setState({
                 render: result,
             })
@@ -26,18 +26,30 @@ export default class Curriculo extends React.Component {
         var experiencia = [];
         var cursos = [];
         var idiomas = [];
-        if(this.props.curriculo != null){
-            this.props.curriculo.experiencias.map((busca)=>{
-                experiencia.push(<ExperienciaCadastrada empresaTrabalhou={busca.empresaTrabalhou} cargoOcupado={busca.cargoOcupado} periodo={busca.periodo} descriçãoAtividades={busca.descriçãoAtividades}></ExperienciaCadastrada>)
-            })
-            
-            this.props.curriculo.cursos.map((busca)=>{
-                cursos.push(<CursoCadastrado formacao={busca.formacao} instituição={busca.instituição} nomeCurso={busca.nomeCurso} anoConclusão={busca.anoConclusão}></CursoCadastrado>)
-            })
-            
-            this.props.curriculo.idiomas.map((busca)=>{
-                idiomas.push(<IdiomaCadastrado idioma={busca.idioma} nivelIdionma={busca.nivelIdionma}></IdiomaCadastrado>)
-            })
+        if (this.props.curriculo != null) {
+            if (this.props.curriculo.experiencias != undefined) {
+                this.props.curriculo.experiencias.map((busca) => {
+                    experiencia.push(<ExperienciaCadastrada empresaTrabalhou={busca.empresaTrabalhou} cargoOcupado={busca.cargoOcupado} periodo={busca.periodo} descriçãoAtividades={busca.descriçãoAtividades}></ExperienciaCadastrada>)
+                })
+            }else{
+                experiencia.push(<span>Não há experiencias cadastradas</span>)
+            }
+
+            if (this.props.curriculo.cursos != undefined) {
+                this.props.curriculo.cursos.map((busca) => {
+                    cursos.push(<CursoCadastrado formacao={busca.formacao} instituição={busca.instituição} nomeCurso={busca.nomeCurso} anoConclusão={busca.anoConclusão}></CursoCadastrado>)
+                })
+            }else{
+                cursos.push(<span>Não há cursos cadastrados</span>)
+            }
+
+            if (this.props.curriculo.idiomas != undefined) {
+                this.props.curriculo.idiomas.map((busca) => {
+                    idiomas.push(<IdiomaCadastrado idioma={busca.idioma} nivelIdionma={busca.nivelIdionma}></IdiomaCadastrado>)
+                })
+            }else{
+                idiomas.push(<span>Não há idiomas cadastrados</span>)
+            }
         }
 
         return (
@@ -54,7 +66,7 @@ export default class Curriculo extends React.Component {
                             <div className="container">
                                 <div className="row m-0">
                                     <div className="col-4">
-                                        <img className="rounded-circle w-100" src={this.state.render} alt="foto do candidato" />
+                                        <img className="rounded-circle mb-3 image-cropper" src={this.state.render} alt="foto do candidato" />
                                     </div>
 
                                     <div className="col-8">

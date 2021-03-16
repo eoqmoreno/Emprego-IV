@@ -34,7 +34,7 @@ class TabelaLinha extends React.Component {
         return (
                 <tr>
                     <td className="align-middle">
-                        <img src={this.state.render} width="10%" className="m-2 mr-4 rounded-circle" alt="foto do candidato"/>
+                        <img src={this.state.render} width="10%" className="m-2 mr-4 rounded-circle image-cropper" alt="foto do candidato"/>
                         {this.props.nome}
                     </td>
                     <td className="align-middle">

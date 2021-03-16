@@ -129,8 +129,8 @@ class CadastroCurriculo extends React.Component {
             candidato: this.props.login[0],
             id: Date.now(),
         }
-        console.log(curriculo)
-        // this.props.addCurriculo(curriculo);
+        // console.log(curriculo)
+        this.props.addCurriculo(curriculo);
     }
 
     modificou = (event) => {

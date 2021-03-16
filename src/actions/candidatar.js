@@ -40,8 +40,12 @@ export const addCandidatura = (candidatura) => {
 }
 
 export const updateCandidatura = (id, candidatura) => {
+    return(dispatch, getState) => {
+        dispatch(buscarCandidatura())
+        $("#entrevistaSolicitada").modal();
+    }
 
-    console.log(database.ref().child('candidatura').orderByKey().once('value',snap=>{return snap}))
+// console.log(database.ref().child('candidatura').orderByKey().once('value',snap=>{return snap}))
 
 //     return(dispatch, getState) => {
 //         database.ref('candidatura/' + "-MUKIudZk3z-vGpb-Wfc").set({

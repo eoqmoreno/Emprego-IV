@@ -143,7 +143,7 @@ export class Modais extends Component {
                                 <span>Não esqueça de combinar o dia e horário da entrevista,<br></br>entrando em contato com o candidato</span>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <input type="submit" className="btn btn-primary" value="Ok" data-dismiss="modal"></input>
+                                <Link to="/" exact data-dismiss="modal" className="btn btn-primary">Ok</Link>
                             </div>
                         </div>
                     </div>
