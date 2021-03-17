@@ -34,7 +34,7 @@ export class Modais extends Component {
                                 <input type="submit" className="btn bg-transparent m-0 p-0 w-content d-inline azulEscuro bold" value="Clique aqui!" data-dismiss="modal"></input>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <Link className="btn btn-primary" to="/" data-dismiss="modal">Ok!</Link>
+                                <Link className="btn btn-primary" to="/" onClick={() => { $('#cadastroVaga').modal('hide'); }}>Ok!</Link>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ export class Modais extends Component {
                                 <span>Continue navegando e descubra as vagas<br></br>quentinhas que acabaram de sair do forno</span>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <input type="submit" className="btn btn-primary" value="Ok" data-dismiss="modal"></input>
+                                <Link className="btn btn-primary" to="/" onClick={() => { $('#cadastroCurriculo').modal('hide'); }}>Ok!</Link>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ export class Modais extends Component {
                                 </div>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <input type="submit" className="btn btn-primary" value="Ok" data-toggle="modal" data-dismiss="modal"></input>
+                                <Link className="btn btn-primary" to="/" onClick={() => { $('#aguardeVaga').modal('hide'); }}>Ok!</Link>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@ export class Modais extends Component {
                                 <span>Não esqueça de combinar o dia e horário da entrevista,<br></br>entrando em contato com o candidato</span>
                             </div>
                             <div className="justify-content-center d-flex mb-3">
-                                <Link to="/" exact data-dismiss="modal" className="btn btn-primary">Ok</Link>
+                                <Link className="btn btn-primary" to="/" onClick={() => { $('#entrevistaSolicitada').modal('hide'); }}>Ok!</Link>
                             </div>
                         </div>
                     </div>
@@ -151,9 +151,9 @@ export class Modais extends Component {
 
                 <div className="modal fade" tabIndex="-1" id="loading" role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered d-flex justify-content-center">
-                            <div className="spinner-border text-info" role="status">
-                                <span className="sr-only">Loading...</span>
-                            </div>
+                        <div className="spinner-border text-info" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
                     </div>
                 </div>
 

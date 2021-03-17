@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../img/novaLogo.png';
 import { FiSearch } from 'react-icons/fi';
+import { FiUser } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { connect } from 'react-redux';
@@ -15,17 +16,13 @@ import $ from 'jquery';
 
 function navbarDefault() {
     return (
-        <div className="collapse navbar-collapse col-12 col-lg-9 justify-content-center align-self-center" id="conteudoNavbarSuporta">
-            <ul className="navbar-nav">
-                <li className="nav-item text-center">
-                    <Link className="bg-transparent btn m-2" to="/">Página Inicial</Link>
-                </li>
-                <li className="nav-item text-center">
-                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#Login" data-dismiss="modal">
-                        Entrar
-                        </button>
-                </li>
-            </ul>
+        <div className="collapse navbar-collapse col-12 col-lg-4 justify-content-end text-center" id="conteudoNavbarSuporta">
+            <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#Login" data-dismiss="modal">
+                Cadastrar
+            </button>
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#Login" data-dismiss="modal">
+                <FiUser className="mb-1"></FiUser> Entrar
+            </button>
         </div>
     )
 }
@@ -62,15 +59,15 @@ class Navbar extends React.Component {
             var values = "vagasdisponiveis/" + value;
             this.setState({
                 link: values,
-            })   
+            })
         }
 
         let render = "";
         if (this.props.login.length > 0) {
             if (this.props.login[1] == "empresa") {
-                render = <NavbarEmp sair={this.props.deslogar}></NavbarEmp>
-            }else{
-                render = <NavbarCan sair={this.props.deslogar}></NavbarCan>
+                render = <NavbarEmp sair={this.props.deslogar} email={this.props.login[0]}></NavbarEmp>
+            } else {
+                render = <NavbarCan sair={this.props.deslogar} email={this.props.login[0]}></NavbarCan>
             }
         } else {
             render = navbarDefault()
@@ -79,20 +76,16 @@ class Navbar extends React.Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg bg-cinza-escuro py-3">
-                    <Link className="navbar-brand" to="/">
-                        <img src={logo} alt="Logo da Empregô" className="d-none d-lg-block" ></img>
-                        <img src={logo} alt="Logo da Empregô" className="w-75 d-block d-lg-none" ></img>
-
+                    <Link className="navbar-brand col-lg-3 col m-0 p-0" to="/">
+                        <img src={logo} alt="Logo da Empregô" className="w-50"></img>
                     </Link>
+
                     <button className="navbar-toggler w-auto" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuporta" aria-controls="conteudoNavbarSuporta" aria-expanded="false" aria-label="Alterna navegação">
                         <FiMenu className="azulEscuro"></FiMenu>
                     </button>
 
                     <div className="row m-0 w-100 h-100">
-
-                        {render}
-
-                        <div className="col-12 col-lg-3 d-flex align-items-center bg-branco rounded py-0 mx-0 my-2" id="pesquisa">
+                        <div className="col-12 col-lg-8 d-flex align-items-center bg-branco rounded py-0 mx-0 my-2" id="pesquisa">
                             <AutoComplete
                                 className="col-11 m-0 p-0"
                                 options={options}
@@ -102,9 +95,12 @@ class Navbar extends React.Component {
                                     option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                                 }
                             />
-                            <Link to={this.state.link} className="col-1 bg-branco m-0 p-0"><FiSearch></FiSearch></Link>
+                            <Link to={this.state.link} className="col-1 m-0 p-0 text-center bg-transparent font-weight-bold font-150"><FiSearch></FiSearch></Link>
                         </div>
+
+                        {render}
                     </div>
+
                 </nav>
             </div >
         )

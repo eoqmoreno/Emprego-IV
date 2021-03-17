@@ -56,9 +56,7 @@ class Login extends React.Component {
                   return this.props.logar(busca.email, "candidato");
 
                 } else {
-
                   $(".alert").removeClass("d-none")
-
                 }
               })
           }

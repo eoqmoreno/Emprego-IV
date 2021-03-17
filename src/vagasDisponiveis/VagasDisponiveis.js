@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { buscarCandidato } from '../actions/candidato';
 import { buscarEmpresa } from '../actions/empresa';
 import { buscarVaga } from '../actions/vaga';
-import Breadcrumb from '../commun/Breadcrumb';
 import CardVaga from './CardVaga';
 
 class VagasDisponiveis extends React.Component {
@@ -92,10 +91,12 @@ class VagasDisponiveis extends React.Component {
             </p>
         </div>
 
+        var title = <h3 className="col-12 text-center color font-weight-bold">Vagas disponiveis para {categoria.toLowerCase()}</h3>
+
         return (
-            <div>
-                {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
-                <div className="card-deck m-5">
+            <div className="m-5">
+                    {vagas.join("") !== "" ? title : ""}
+                <div className="row justify-content-between align-content-start">
                     {vagas.join("") !== "" ? vagas : erro}
                 </div>
             </div>

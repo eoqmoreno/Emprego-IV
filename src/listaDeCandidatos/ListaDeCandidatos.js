@@ -46,26 +46,41 @@ class ListaDeCandidatos extends React.Component {
 
         var caminho = [
             { nome: "LISTA DE VAGAS", link: "/vagascadastradas" },
-            { nome: "LISTA DE CANDIDATOS", link: "/listadecandidatos/"+vaga },
+            { nome: "LISTA DE CANDIDATOS", link: "/listadecandidatos/" + vaga },
         ]
 
+        var erro = <div className="text-center w-100 azulEscuro">
+            <h3 className="bold azulEscuro">
+                Não encontramos nada por aqui!
+        </h3>
+            <p>
+                Não há candidatos cadastrados no momento para essa vaga.
+            <br></br>
+            Aguarde um pouco, daqui a pouco chega alguém!
+        </p>
+        </div>;
+
+        var tabela = <table className="table table-hover border-0">
+            <thead>
+                <th> Candidato </th>
+                <th> Habilidades compatíveis </th>
+                <th> Currículo </th>
+                <th></th>
+            </thead>
+
+            <tbody>
+                {candidatos}
+            </tbody>
+        </table>;
+
+        console.log(candidatos)
 
         return (
             <div className="m-5 p-0">
                 {/* <Breadcrumb caminho={caminho}></Breadcrumb> */}
 
-                    <table className="table table-hover border-0">
-                        <thead>
-                            <th> Candidato </th>
-                            <th> Habilidades compatíveis </th>
-                            <th> Currículo </th>
-                            <th></th>
-                        </thead>
-
-                        <tbody>
-                            {candidatos}
-                        </tbody>
-                    </table>
+                {candidatos.join("") !== "" ? tabela : erro}
+                
                 {modais}
 
             </div >

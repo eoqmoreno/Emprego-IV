@@ -30,9 +30,6 @@ export class ExperienciasRepeate extends Component {
         }
         this.props.fun(experiencia);
         this.props.add();
-        $(document).ready(function () {
-            $("#checkboxE").addClass("d-none");
-        });
     }
 
     onChange = (value, dateString) => {

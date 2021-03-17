@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../commun/Breadcrumb';
-import Perfil from '../img/Group 25.png'
+import Perfil from '../img/icones/addFoto.png'
 import { FiEye } from "react-icons/fi";
 import { addEmpresa } from '../actions/empresa';
 import $ from 'jquery';
@@ -95,7 +94,7 @@ class Empresa extends React.Component {
                         <form onSubmit={this.enviar}>
                             <div className="text-center pt-4">
                                 <label htmlFor="photoFile">
-                                    <img className="w-50 rounded-circle" src={this.state.render} alt=""></img><br></br>
+                                    <img className="rounded-circle image-cropper" src={this.state.render} alt=""></img><br></br>
                                     <label className="azulEscuro">Hey! Clica aqui para adicionar sua imagem</label>
                                 </label>
                                 <br></br>

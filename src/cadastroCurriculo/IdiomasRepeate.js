@@ -25,9 +25,6 @@ export class IdiomasRepeate extends Component {
         console.log(idioma)
         this.props.fun(idioma);
         this.props.add();
-        $(document).ready(function () {
-            $("#checkboxE").addClass("d-none");
-        });
     }
 
     render() {
@@ -51,7 +48,7 @@ export class IdiomasRepeate extends Component {
 
                     <div className="col">
                         <label className="color" htmlFor="nivelIdionma">Nível</label>
-                        <select className="form-control" id="nivelIdionma"  onChange={this.modificou}>
+                        <select className="form-control" id="nivelIdionma" onChange={this.modificou}>
                             <option selected disabled hidden> Clique para selecionar </option>
                             <option>Iniciante</option>
                             <option>Intermediário</option>
@@ -63,9 +60,9 @@ export class IdiomasRepeate extends Component {
 
                 </div>
                 <div className="custom-control custom-checkbox">
-                    <input type="checkbox" className="custom-control-input" id="temIdioma" value="true" onChange={()=>{$(".idioma :input").attr("disabled", true)}}/>
+                    <input type="checkbox" className="custom-control-input" id="temIdioma" value="true" onChange={() => { $(".idioma :input").attr("disabled", true) }} />
                     <br></br>
-                    <label className="custom-control-label color" htmlFor="temIdioma">NÃO POSSUO CURSOS </label>
+                    <label className="custom-control-label color" htmlFor="temIdioma">NÃO TENHO OUTROS IDIOMAS</label>
                     <button type="button" className="btn btn-outline-primary float-right" onClick={this.enviar}> <strong>Salvar</strong></button>
                 </div>
             </div>

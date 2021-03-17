@@ -8,10 +8,14 @@ export const logar = (id, tipo) => {
     return (dispatch, getState) => {
         dispatch(buscarLoginSucesso([id, tipo]));
     }
-}   
+}
 
 export const deslogar = () => {
     return (dispatch, getState) => {
+        $('#loading').modal()
+        setTimeout(function () {
+            $('#loading').modal("hide")
+        }, 2000)
         dispatch(buscarLoginIniciado());
     }
-}   
+}

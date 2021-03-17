@@ -17,37 +17,37 @@ export class Categorias extends Component {
         return (
             <div className="row bg-cinza-claro pt-2 pb-2 m-0">
                 <Link className="col-4 col-lg-2 text-center" to="/vagasdisponiveis/Consultoria">
-                    <img src={consultoria} className="w-25 m-3" alt=""></img>
+                    <img src={consultoria} className="w-25 p-2" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Consultoria</span>
                 </Link>
 
                 <Link className="col-4 col-lg-2 text-center" to="/vagasdisponiveis/Educação">
-                    <img src={educação} className="w-25 m-3" alt=""></img>
+                    <img src={educação} className="w-25 p-2" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Educação</span>
                 </Link>
 
                 <Link className="col-4 col-lg-2 text-center" to="/vagasdisponiveis/Saúde">
-                    <img src={saúde} className="w-25 m-3" alt=""></img>
+                    <img src={saúde} className="w-25 p-2" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Saúde</span>
                 </Link>
 
                 <Link className="col-2 d-none d-lg-block text-center" to="/vagasdisponiveis/Tecnologia">
-                    <img src={tecnologia} className="w-25 m-3" alt=""></img>
+                    <img src={tecnologia} className="w-25 p-2" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Tecnologia</span>
                 </Link>
 
                 <Link className="col-2 d-none d-lg-block text-center" to="/vagasdisponiveis/Transporte">
-                    <img src={transporte} className="w-25 m-3" alt=""></img>
+                    <img src={transporte} className="w-25 p-2" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Transportes</span>
                 </Link>
 
                 <Link className="col-2 d-none d-lg-block text-center" to="/vagasdisponiveis/Turismo">
-                    <img src={turismo} className="w-25 m-3" alt=""></img>
+                    <img src={turismo} className="w-25 p-2" alt=""></img>
                     <br />
                     <span className="bold azulEscuro">Turismo</span>
                 </Link>

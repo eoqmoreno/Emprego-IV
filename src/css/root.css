@@ -204,3 +204,19 @@ input:focus:valid:required{
     height: 125px;
     object-fit: cover;
 }
+
+.image-profile {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+}
+
+
+.ant-select {
+    font-size: 16px  !important;
+}
+
+.font-150{
+    font-size: 125%;
+    margin-top: -1% !important;
+}

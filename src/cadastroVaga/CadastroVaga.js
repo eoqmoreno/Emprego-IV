@@ -190,7 +190,7 @@ class CadastroVaga extends React.Component {
                                     <Select
                                         mode="multiple"
                                         allowClear
-                                        style={{ width: '100%' }}
+                                        style={{ width: '100%'}}
                                         placeholder="Clique para selecionar"
                                         onChange={this.funTecnica}
                                         rules={[{ required: true }]}
@@ -198,7 +198,7 @@ class CadastroVaga extends React.Component {
                                     >
                                         {habiTecnica}
                                     </Select>
-
+                                    <br></br>
                                     <br></br>
                                     <label className="color2" htmlFor="interpessoais">Competências interpessoais</label>
                                     <Select
