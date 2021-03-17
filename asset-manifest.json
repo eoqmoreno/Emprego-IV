@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/Emprego-IV/static/css/main.e80dcdea.chunk.css",
-    "main.js": "/Emprego-IV/static/js/main.1d9df783.chunk.js",
-    "main.js.map": "/Emprego-IV/static/js/main.1d9df783.chunk.js.map",
+    "main.css": "/Emprego-IV/static/css/main.a9454578.chunk.css",
+    "main.js": "/Emprego-IV/static/js/main.cad431c1.chunk.js",
+    "main.js.map": "/Emprego-IV/static/js/main.cad431c1.chunk.js.map",
     "runtime-main.js": "/Emprego-IV/static/js/runtime-main.538ec09f.js",
     "runtime-main.js.map": "/Emprego-IV/static/js/runtime-main.538ec09f.js.map",
     "static/css/2.815e8445.chunk.css": "/Emprego-IV/static/css/2.815e8445.chunk.css",
-    "static/js/2.c1256704.chunk.js": "/Emprego-IV/static/js/2.c1256704.chunk.js",
-    "static/js/2.c1256704.chunk.js.map": "/Emprego-IV/static/js/2.c1256704.chunk.js.map",
+    "static/js/2.a9474e89.chunk.js": "/Emprego-IV/static/js/2.a9474e89.chunk.js",
+    "static/js/2.a9474e89.chunk.js.map": "/Emprego-IV/static/js/2.a9474e89.chunk.js.map",
     "index.html": "/Emprego-IV/index.html",
-    "precache-manifest.9c281534eec9dc42ee796ec0052aaf40.js": "/Emprego-IV/precache-manifest.9c281534eec9dc42ee796ec0052aaf40.js",
+    "precache-manifest.07500941835962eae6a5752c14192630.js": "/Emprego-IV/precache-manifest.07500941835962eae6a5752c14192630.js",
     "service-worker.js": "/Emprego-IV/service-worker.js",
     "static/css/2.815e8445.chunk.css.map": "/Emprego-IV/static/css/2.815e8445.chunk.css.map",
-    "static/css/main.e80dcdea.chunk.css.map": "/Emprego-IV/static/css/main.e80dcdea.chunk.css.map",
-    "static/js/2.c1256704.chunk.js.LICENSE.txt": "/Emprego-IV/static/js/2.c1256704.chunk.js.LICENSE.txt",
+    "static/css/main.a9454578.chunk.css.map": "/Emprego-IV/static/css/main.a9454578.chunk.css.map",
+    "static/js/2.a9474e89.chunk.js.LICENSE.txt": "/Emprego-IV/static/js/2.a9474e89.chunk.js.LICENSE.txt",
     "static/media/root.css": "/Emprego-IV/static/media/ProximaNova-Regular.410504d4.otf",
+    "static/media/addFoto.png": "/Emprego-IV/static/media/addFoto.c59c12c1.png",
     "static/media/candidato.png": "/Emprego-IV/static/media/candidato.bcdf934c.png",
     "static/media/conexão.png": "/Emprego-IV/static/media/conexão.27d0be61.png",
     "static/media/confiança.png": "/Emprego-IV/static/media/confiança.f2f780cd.png",
@@ -22,14 +23,14 @@
     "static/media/empresa.png": "/Emprego-IV/static/media/empresa.2ccd1b81.png",
     "static/media/fluidez.png": "/Emprego-IV/static/media/fluidez.347f90a2.png",
     "static/media/slids1.png": "/Emprego-IV/static/media/slids1.97974288.png",
-    "static/media/slids2.png": "/Emprego-IV/static/media/slids2.e56b098f.png",
+    "static/media/slids2.png": "/Emprego-IV/static/media/slids2.57710404.png",
     "static/media/slids3.png": "/Emprego-IV/static/media/slids3.f2d854c2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.538ec09f.js",
     "static/css/2.815e8445.chunk.css",
-    "static/js/2.c1256704.chunk.js",
-    "static/css/main.e80dcdea.chunk.css",
-    "static/js/main.1d9df783.chunk.js"
+    "static/js/2.a9474e89.chunk.js",
+    "static/css/main.a9454578.chunk.css",
+    "static/js/main.cad431c1.chunk.js"
   ]
 }
